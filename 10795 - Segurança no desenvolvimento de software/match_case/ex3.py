@@ -8,5 +8,5 @@ match pedido:
     case {"tipo": "venda", "valor": v}:
         print(f"Venda de {v}€")
     case _:
-        print("Pedido desconhecido")
+        print("Pedido não encontrado")
 
