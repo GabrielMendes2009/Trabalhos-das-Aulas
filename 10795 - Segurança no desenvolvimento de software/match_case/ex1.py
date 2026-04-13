@@ -1,5 +1,3 @@
-# 1. Tipo de dia
-
 dia = input("Digite o dia da semana: ").strip().lower()
 
 match dia:

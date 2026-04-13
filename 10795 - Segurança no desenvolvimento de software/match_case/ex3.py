@@ -1,5 +1,3 @@
-# 3. Tipo de pedido
-
 pedido = {"tipo": "venda", "valor": 375}  
 
 match pedido:

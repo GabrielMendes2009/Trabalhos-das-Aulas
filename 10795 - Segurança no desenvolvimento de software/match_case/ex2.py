@@ -1,5 +1,3 @@
-# 2. Classificação de nota
-
 nota = int(input("Insira a nota (0-100): "))
 
 match nota:
