@@ -1,7 +1,9 @@
 valor_a = int(input("número 1 = "))
 valor_b = int(input("número 2 = "))
 valor_c = int(input("número 3 = "))
+
 maior_val = max(valor_a, valor_b, valor_c)
 menor_val = min(valor_a, valor_b, valor_c)
+
 print(f"Maior número: {maior_val}")
 print(f"Menor número: {menor_val}")
