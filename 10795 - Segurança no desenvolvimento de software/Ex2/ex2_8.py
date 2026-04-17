@@ -7,5 +7,5 @@ for idx in range(10):
 media_turma = sum(lista_notas) / 10
 qtd_acima = sum(1 for n in lista_notas if n >= media_turma)
 
-print(f"Média: {media_turma:.2f}")
+print(f"Média: {media_turma}")
 print(f"Alunos com nota igual ou acima da média: {qtd_acima}")
