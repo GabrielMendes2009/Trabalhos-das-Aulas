@@ -1,5 +1,5 @@
 print("Múltiplos de 5 que não são múltiplos de 3:\n")
-total = 0
+total = 1
 
 for num in range(1, 1001):
     if num % 5 == 0 and num % 3 != 0:
