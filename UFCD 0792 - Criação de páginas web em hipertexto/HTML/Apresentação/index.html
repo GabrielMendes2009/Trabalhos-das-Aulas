@@ -5,25 +5,83 @@
     <title>Quem sou eu?</title>
     <link href="https://cdnfonts.com" rel="stylesheet">
     <style>
-        @font-face {
-            font-family: 'BM Space';
-            src: url('font/BMSPA___.TTF');
+        /* Definição da fonte BM Space */
+        @font-face { 
+            font-family: 'BM Space'; /* Nome da fonte personalizada */
+            src: url('font/BMSPA___.TTF'); /* Caminho para o arquivo da fonte */
         }
 
-        @font-face {
-            font-family: 'New Rodin Pro';
-            src: url('font/FOT-NewRodin Pro DB.otf');
+        /* Definição da fonte New Rodin Pro */
+        @font-face { 
+            font-family: 'New Rodin Pro'; /* Nome da fonte personalizada */
+            src: url('font/FOT-NewRodin Pro DB.otf'); /* Caminho para o arquivo da fonte */
         }
 
-        h1 {
-            font-family: 'BM Space', sans-serif;
+        /* Estilo para o título principal */
+        h1 { 
+            font-family: 'BM Space', sans-serif; /* Aplica a fonte personalizada BM Space aos títulos de primeiro nível */
+
+            color: #51eefc; /* Cor do título principal */
         }
 
-        body {
-            background-color: #1269cc;
-            color: 	#ffffff;
-            font-family: 'New Rodin Pro', sans-serif;
+        /* Estilo para o subtítulo */
+        h2 { 
+            font-family: 'BM Space', sans-serif; /* Aplica a fonte personalizada BM Space aos títulos de segundo nível */
 
+            color: #303030; /* Cor do subtítulo */
+        }
+
+        /* Estilo para o terceiro nível de título */
+        h3 { 
+            font-family: 'BM Space', sans-serif; /* Aplica a fonte personalizada BM Space aos títulos de terceiro nível */
+
+            color: #303030; /* Cor do título de terceiro nível */
+        }
+        
+        /* Estilo para toda a página */
+        body { 
+            background-color: #1269cc; /* Cor de fundo da página */
+            color: 	#ffffff; /* Cor do texto */
+            font-family: 'New Rodin Pro', sans-serif; /* Aplica a fonte personalizada New Rodin Pro ao corpo do texto */
+
+            display: flex; /* Usa Flexbox para organizar o layout da página */
+            flex-direction: column; /* Organiza os elementos em uma coluna */
+            align-items: center; /* Centraliza os elementos horizontalmente */
+            text-align: center; /* Centraliza o texto dentro dos elementos */
+            padding: 20px; /* Adiciona um espaçamento interno de 20 pixels em toda a página */
+            margin: 0; /* Remove a margem padrão do navegador para evitar espaços indesejados ao redor da página */
+
+        }
+
+        /* Estilo para as imagens */
+        img { 
+            border: 4px solid #ffffff; /* Adiciona uma borda branca de 4 pixels ao redor da imagem */
+            border-radius: 8px; /* Adiciona cantos arredondados à borda da imagem */
+
+            transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave para o efeito de zoom, com duração de 0.3 segundos e uma curva de aceleração suave (ease-in-out) */
+        }
+
+        /* Efeito de zoom ao passar o mouse sobre a imagem */
+        img:hover { 
+            /* Faz a imagem aumentar 10% do tamanho original (1.1) */
+            transform: scale(1.1); 
+        }
+
+        /* Estilo para as listas */
+        ul, ol { 
+            text-align: left; /* Mantém as listas alinhadas à esquerda para melhor leitura */
+            margin-bottom: 20px; /* Adiciona um espaçamento inferior de 20 pixels para separar as listas do conteúdo seguinte */
+        }
+
+        /* Estilo para os links */
+        a { 
+            color: #b3d4ff; /* Cor dos links */
+            text-decoration: none; /* Remove o sublinhado dos links para um visual mais limpo */
+        }
+
+        /* Efeito ao passar o mouse sobre os links */
+        a:hover {
+            text-decoration: underline; /* Adiciona um sublinhado aos links quando o mouse passa sobre eles para indicar que são clicáveis */
         }
 
     </style>
@@ -32,7 +90,35 @@
 <body>
 
     <h1> Descubra tudo sobre Gabriel Mendes </h1>
-    <p> Olá!  </p>
+    <p> Olá! Eu sou o Gabriel Alves Mendes, tenho 16 anos e sou um estudante de programação e entusiasta de tecnologia. </p>
+    <p>
+        <img src="https://cdn2.steamgriddb.com/hero_thumb/f1d8dca39c965ef4ac71ba1719d4bd83.jpg" alt="Banner - Persona 3 Reload" title="Banner - Persona 3 Reload"/>
+    </p>
+
+    <div>
+        <p> Amo criar coisas novas. <br>
+            Amo escrever histórias, poemas/poesias, ler livros, ouvir música, jogar RPGs de mesa, e videojogos. <br>
+            Sou um grande fã de jogos de RPG, especialmente aqueles que envolvem narrativas ricas e mundos imersivos.<br>
+            Estou sempre em busca de novas aventuras, seja através de um livro, um jogo ou uma conversa interessante. </p>
+    </div>
+
+    <div>
+        <h2>RPGs que dirigi:</h2>
+        <ul>
+            <li>Penumbra do Reinado (2025, Tormenta 20);</li>
+            <li>Jardim dos Silentes (Em desenvolvimento, The Velvet Book);</li>
+            <li>NULLA (Em andamento, Ordem Paranormal).</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>Jogos preferidos:</h2>
+        <ol>
+            <li><a href="https://www.metacritic.com/game/persona-3-reload/" target="_blank">Persona 3 Reload</a></li>
+            <li><a href="https://www.metacritic.com/game/red-dead-redemption-2/" target="_blank">Red Dead Redemption 2</a></li>
+            <li><a href="https://www.metacritic.com/game/death-stranding-directors-cut/" target="_blank">Death Stranding: Director's Cut</a></li>
+        </ol>
+    </div>
 
 </body>
 
