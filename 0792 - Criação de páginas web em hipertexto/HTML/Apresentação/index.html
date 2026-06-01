@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Quem sou eu?</title>
+    <link rel="icon" href="./img/icone.ico" type="image/x-icon">
     <link href="https://cdnfonts.com" rel="stylesheet">
     <style>
         /* Definição da fonte BM Space */
@@ -15,6 +16,16 @@
         @font-face { 
             font-family: 'New Rodin Pro'; /* Nome da fonte personalizada */
             src: url('font/FOT-NewRodin Pro DB.otf'); /* Caminho para o arquivo da fonte */
+        }
+
+        /* Animação de fade-in para a página */
+        @keyframes fade {
+            0% { opacity: 0; } /* A página começa completamente transparente */
+            100% { opacity: 1; } /* A página termina completamente opaca, criando um efeito de fade-in suave */
+        }
+
+        body {
+            animation: fade 1.5s;
         }
 
         /* Estilo para o título principal */
@@ -40,6 +51,8 @@
         
         /* Estilo para toda a página */
         body { 
+            animation: fade 2.5s; /* Aplica a animação de fade-in à página, com duração de 1.5 segundos */
+
             background-color: #1269cc; /* Cor de fundo da página */
             color: 	#ffffff; /* Cor do texto */
             font-family: 'New Rodin Pro', sans-serif; /* Aplica a fonte personalizada New Rodin Pro ao corpo do texto */
