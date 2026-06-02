@@ -1,0 +1,12 @@
+{"level":"info","message":"[mb:2525] mountebank v2.9.4 now taking orders - point your browser to http://localhost:2525/ for help","timestamp":"2026-06-02T12:57:27.112Z"}
+{"level":"info","message":"[mb:2525] GET /images/book.jpg","timestamp":"2026-06-02T12:57:29.458Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2026-06-02T12:57:37.606Z"}
+{"level":"info","message":"[http:4548 API 1] Open for business...","timestamp":"2026-06-02T12:57:37.611Z"}
+{"level":"info","message":"[http:4548 API 1] ::ffff:127.0.0.1:56342 => GET /PIPL0924","timestamp":"2026-06-02T12:57:43.651Z"}
+{"level":"info","message":"[http:4548 API 1] no predicate match, using default response","timestamp":"2026-06-02T12:57:43.657Z"}
+{"level":"info","message":"[http:4548 API 1] ::ffff:127.0.0.1:56390 => GET /PIPL0924","timestamp":"2026-06-02T13:02:56.084Z"}
+{"level":"info","message":"[http:4548 API 1] no predicate match, using default response","timestamp":"2026-06-02T13:02:56.086Z"}
+{"level":"info","message":"[http:4548 API 1] ::ffff:127.0.0.1:63625 => GET /PIPL0924","timestamp":"2026-06-02T13:05:07.734Z"}
+{"level":"info","message":"[http:4548 API 1] no predicate match, using default response","timestamp":"2026-06-02T13:05:07.760Z"}
+{"level":"info","message":"[http:4548 API 1] ::ffff:127.0.0.1:63630 => GET /PIPL0924","timestamp":"2026-06-02T13:05:17.116Z"}
+{"level":"info","message":"[http:4548 API 1] no predicate match, using default response","timestamp":"2026-06-02T13:05:17.117Z"}
