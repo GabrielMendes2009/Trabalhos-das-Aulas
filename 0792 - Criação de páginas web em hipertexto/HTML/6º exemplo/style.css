@@ -1,0 +1,33 @@
+h1 {
+    color: #51eefc; /* Cor do título principal */
+}
+        
+body { 
+    background-color: #1269cc; /* Cor de fundo da página */
+    color: 	#ffffff; /* Cor do texto */
+        
+    display: flex; /* Usa Flexbox para organizar o layout da página */
+    flex-direction: column; /* Organiza os elementos em uma coluna */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    text-align: center; /* Centraliza o texto dentro dos elementos */
+    padding: 20px; /* Adiciona um espaçamento interno de 20 pixels em toda a página */
+    margin: 0; /* Remove a margem padrão do navegador para evitar espaços indesejados ao redor da página */
+
+}
+
+/* Estilo para os links */
+a { 
+    color: #b3d4ff; /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado dos links para um visual mais limpo */
+}
+
+/* Efeito ao passar o mouse sobre os links */
+a:hover {
+    text-decoration: underline; /* Adiciona um sublinhado aos links quando o mouse passa sobre eles para indicar que são clicáveis */
+}
+
+button {
+    background-color: #51eefc;
+    color: #ffffff;
+    padding: 10px;
+}

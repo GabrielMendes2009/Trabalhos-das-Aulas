@@ -1,0 +1,124 @@
+/* Definição da fonte BM Space */
+        @font-face { 
+            font-family: 'BM Space'; /* Nome da fonte personalizada */
+            src: url('font/BMSPA___.TTF'); /* Caminho para o arquivo da fonte */
+        }
+
+        /* Definição da fonte New Rodin Pro */
+        @font-face { 
+            font-family: 'New Rodin Pro'; /* Nome da fonte personalizada */
+            src: url('font/FOT-NewRodin Pro DB.otf'); /* Caminho para o arquivo da fonte */
+        }
+
+        /* Animação de fade-in para a página */
+        @keyframes fade {
+            0% { opacity: 0; } /* A página começa completamente transparente */
+            100% { opacity: 1; } /* A página termina completamente opaca, criando um efeito de fade-in suave */
+        }
+
+        body {
+            animation: fade 1.5s;
+        }
+
+        .video-header {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            overflow: hidden; /* Corta o que passar da altura acima */
+            border-bottom: 4px solid #A0C4DF;
+            border-radius: 30px;
+        }
+
+        .video-header video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Faz o vídeo preencher o espaço sem distorcer */
+            pointer-events: none; /* Impede o usuário de clicar e pausar o vídeo */
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Uma camada escura para dar leitura ao texto */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-overlay h1 {
+            color: #A0C4DF;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        h1{ 
+            color: #A0C4DF;
+            text-transform: uppercase; /* Deixa com cara de interface de anime */
+            letter-spacing: 2px;
+        }
+        
+        h2, h3 {
+            color: #E05A47;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            text-align: left;
+        }
+
+        /* Estilo para toda a página */
+        body { 
+            animation: fade 2.5s; /* Aplica a animação de fade-in à página, com duração de 1.5 segundos */
+
+            background-color: #1A1C1E; /* Cor de fundo da página */
+            color:  #F4F7F6; /* Cor do texto */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            display: flex; /* Usa Flexbox para organizar o layout da página */
+            flex-direction: column; /* Organiza os elementos em uma coluna */
+            align-items: center; /* Centraliza os elementos horizontalmente */
+            text-align: center; /* Centraliza o texto dentro dos elementos */
+            padding: 20px; /* Adiciona um espaçamento interno de 20 pixels em toda a página */
+            margin: 0; /* Remove a margem padrão do navegador para evitar espaços indesejados ao redor da página */
+
+        }
+
+        /* Estilo para as imagens */
+        img { 
+            border: 4px solid #ffffff; /* Adiciona uma borda branca de 4 pixels ao redor da imagem */
+            border-radius: 8px; /* Adiciona cantos arredondados à borda da imagem */
+
+            transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave para o efeito de zoom, com duração de 0.3 segundos e uma curva de aceleração suave (ease-in-out) */
+        }
+
+        /* Efeito de zoom ao passar o mouse sobre a imagem */
+        img:hover { 
+            /* Faz a imagem aumentar 10% do tamanho original (1.1) */
+            transform: scale(1.1); 
+        }
+
+        /* Estilo para as listas */
+        ul, ol { 
+            text-align: left; /* Mantém as listas alinhadas à esquerda para melhor leitura */
+            margin-bottom: 20px; /* Adiciona um espaçamento inferior de 20 pixels para separar as listas do conteúdo seguinte */
+        }
+
+        /* Estilo para os links */
+        a { 
+            color: #E05A47;            /* Laranja de destaque */
+            font-weight: bold;
+            text-decoration: none; /* Remove o sublinhado dos links para um visual mais limpo */
+        }
+
+        /* Efeito ao passar o mouse sobre os links */
+        a:hover {
+            color: #A0C4DF;
+            text-decoration: underline; /* Adiciona um sublinhado aos links quando o mouse passa sobre eles para indicar que são clicáveis */
+        }
