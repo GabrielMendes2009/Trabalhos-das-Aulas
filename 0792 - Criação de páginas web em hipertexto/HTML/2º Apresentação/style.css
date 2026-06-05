@@ -73,6 +73,10 @@
             text-align: left;
         }
 
+        b {
+            color: #A0C4DF;
+        }
+
         /* Estilo para toda a página */
         body { 
             animation: fade 2.5s; /* Aplica a animação de fade-in à página, com duração de 1.5 segundos */
