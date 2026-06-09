@@ -1,2 +1,38 @@
-
-
+POST http://localhost:2525/imposters
+Content-Type: application/json
+ 
+{
+    "port":4502,
+    "protocol":"http",
+    "name":"Exercicio1",
+ 
+    "stubs":[{
+        "responses": [
+            { "is": { "statusCode": 200,
+                "body":{"Marcas":["Atlus",
+                                  "Playstation Studios",
+                                  "Rockstar Games",
+                                  "Xbox Studios"]}}}],
+        "predicates": [{
+            "and": [
+                    {
+                    "equals": {
+                        "path": "/api/marcas",
+                        "method": "GET",
+                        "headers": { "Content-Type": "application/json" }
+                        }
+                        },
+                    {
+                    "not": {
+                        "contains": { "body": "requiredField" },
+                        "caseSensitive": true
+                    }
+                }
+            ]
+        }]
+    }]
+}
+ 
+###
+GET http://localhost:4502/api/marcas
+Content-Type: application/json

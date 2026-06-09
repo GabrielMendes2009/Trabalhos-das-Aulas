@@ -1,6 +1,2 @@
-{"level":"info","message":"[mb:2525] mountebank v2.9.4 now taking orders - point your browser to http://localhost:2525/ for help","timestamp":"2026-06-02T14:19:33.181Z"}
-{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2026-06-02T14:19:38.848Z"}
-{"level":"info","message":"[http:4545] Open for business...","timestamp":"2026-06-02T14:19:38.853Z"}
-{"level":"info","message":"[http:4545] ::ffff:127.0.0.1:61228 => GET /","timestamp":"2026-06-02T14:20:10.999Z"}
-{"level":"info","message":"[http:4545] no predicate match, using default response","timestamp":"2026-06-02T14:20:11.002Z"}
-{"level":"info","message":"[mb:2525] GET /images/book.jpg","timestamp":"2026-06-02T14:20:20.248Z"}
+{"level":"info","message":"[mb:2525] mountebank v2.9.4 now taking orders - point your browser to http://localhost:2525/ for help","timestamp":"2026-06-05T13:08:08.269Z"}
+{"level":"info","message":"[mb:2525] GET /images/book.jpg","timestamp":"2026-06-05T13:08:25.677Z"}
