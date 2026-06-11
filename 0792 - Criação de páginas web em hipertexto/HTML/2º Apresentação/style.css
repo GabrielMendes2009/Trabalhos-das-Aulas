@@ -104,8 +104,8 @@
 
         /* Efeito de zoom ao passar o mouse sobre a imagem */
         img:hover { 
-            /* Faz a imagem aumentar 10% do tamanho original (1.1) */
-            transform: scale(1.1); 
+            /* Faz a imagem aumentar 5% do tamanho original (1.1) */
+            transform: scale(1.02); /* Aplica a transformação de escala para criar o efeito de zoom */
         }
 
         /* Estilo para as listas */
@@ -125,4 +125,36 @@
         a:hover {
             color: #A0C4DF;
             text-decoration: underline; /* Adiciona um sublinhado aos links quando o mouse passa sobre eles para indicar que são clicáveis */
+        }
+
+        .rei-container {
+            display: flex; /* Usa Flexbox para organizar o layout da seção */
+            flex-direction: row; /* Organiza os elementos em uma linha */
+            align-items: center; /* Alinha os itens verticalmente ao centro */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            gap: 30px; /* Adiciona um espaçamento de 20 pixels entre os elementos */
+            max-width: 900px; /* Limita a largura máxima da seção para evitar que fique muito larga em telas grandes */
+            margin: 0px auto; /* Adiciona um espaçamento superior e inferior de 0 pixels e centraliza a seção horizontalmente */
+        }
+
+        .rei-texto {
+            flex: 1; /* Permite que o texto ocupe o espaço restante disponível */
+            text-align: left; /* Alinha o texto à esquerda para melhor leitura */
+        }
+
+        .rei-imagem {
+            flex: 1; /* Permite que a imagem ocupe o espaço restante disponível */
+        }
+
+        .rei-imagem img {
+            width: 100%; /* Faz a imagem ocupar toda a largura disponível dentro do contêiner */
+            height: auto; /* Mantém a proporção da imagem para evitar distorção */
+        }
+
+        .letra-musica {
+            margin: 20px 0; /* Adiciona um espaçamento vertical de 20 pixels acima e abaixo da letra da música para separar do conteúdo anterior e posterior */
+            padding-left: 15px; /* Adiciona um recuo à esquerda de 15 pixels para destacar a letra da música */
+            border-left: 3px solid #A0C4DF; /* Adiciona uma borda vertical à esquerda da letra da música para destacar visualmente */
+            font-style: italic; /* Aplica um estilo de fonte itálico para diferenciar a letra da música do restante do texto */
+            color: #d0d0d0; /* Define a cor da letra da música para um tom de azul claro para destacar ainda mais */
         }
