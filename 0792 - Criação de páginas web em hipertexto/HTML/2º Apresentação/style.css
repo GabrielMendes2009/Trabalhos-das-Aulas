@@ -158,3 +158,10 @@
             font-style: italic; /* Aplica um estilo de fonte itálico para diferenciar a letra da música do restante do texto */
             color: #d0d0d0; /* Define a cor da letra da música para um tom de azul claro para destacar ainda mais */
         }
+
+        .coisinha-de-gif {
+            margin-top: 30px; /* Adiciona um espaçamento superior de 30 pixels para separar o GIF do conteúdo anterior */
+            text-align: center; /* Centraliza o GIF dentro da seção */
+            width: 100%; /* Faz a seção ocupar toda a largura disponível para garantir que o GIF seja centralizado corretamente */
+            height: auto; /* Permite que a altura da seção se ajuste automaticamente com base no conteúdo (GIF) para evitar espaços em branco desnecessários */
+        }
