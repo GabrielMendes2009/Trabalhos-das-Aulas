@@ -104,3 +104,29 @@ body {
     background-color: #141414;
     
 }
+
+.menu-lateral ul li a.ativo {
+    transform: skewX(-10deg) scale(1.05);
+    pointer-events: none; /* Impede o usuário de clicar na página que já está aberta */
+    color: #ffffff !important; /* Garante que o texto fique branco */
+}
+
+.link-p1.ativo {
+    background-color: #a80fff;
+}
+
+.link-p3.ativo {
+    background-color: #00bfff;
+}
+
+.link-p4.ativo {
+    background-color: #ffe52c;
+}
+
+.link-p5.ativo {
+    background-color: #d92323;
+}
+
+.link-p6.ativo {
+    background-color: #1bd13a; color: white;
+}
