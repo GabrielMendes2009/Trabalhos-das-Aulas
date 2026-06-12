@@ -23,12 +23,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    border-right: 5px solid #ff0033;
+    border-right: 5px solid #3a43e4;
 }
 
 .logo-velvet {
     font-size: 24px;
-    color: #ff0033;
+    color: #3a43e4;
     text-align: center;
     letter-spacing: 2px;
 }
@@ -58,7 +58,7 @@ body {
 }
 
 .link-p1:hover {
-    background-color: #a80fff; color: white !important;
+    background-color: #a80fff;
 }
 
 .link-p3:hover {
@@ -66,13 +66,34 @@ body {
 }
 
 .link-p4:hover {
-    background-color: #8a2be2; color: white;
+    background-color: #ffe52c;
 }
 
 .link-p5:hover {
-    background-color: #8a2be2; color: white;
+    background-color: #d92323;
 }
 
 .link-p6:hover {
-    background-color: #8a2be2; color: white;
+    background-color: #1bd13a; color: white;
+}
+
+.link-index {
+    text-decoration: none !important; /* Força o sumiço do sublinhado */
+    color: #3a43e4 !important;        /* Força a logo a ficar com o seu azul */
+    display: block;
+    width: 100%;
+    transition: transform 0.2s ease;
+}
+
+/* Efeito opcional: a logo dá uma leve aumentada preta/azul no hover */
+.link-index:hover {
+    transform: scale(1.05);
+    color: #3a43e4;
+}
+
+.conteudo-principal {
+    flex: 1; /* Ocupa todo o resto do espaço da tela */
+    padding: 50px;
+    background-color: #141414;
+    
 }
