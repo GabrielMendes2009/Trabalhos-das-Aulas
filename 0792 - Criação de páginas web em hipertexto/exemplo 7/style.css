@@ -64,3 +64,16 @@ img:hover {
     /* Faz a imagem aumentar 5% do tamanho original (1.1) */
     transform: scale(1.02); /* Aplica a transformação de escala para criar o efeito de zoom */
 }
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.conteudo {
+    flex: 2;
+}
+
+.lateral {
+    flex: 1;
+}
