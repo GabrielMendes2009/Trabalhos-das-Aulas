@@ -1,3 +1,8 @@
+@keyframes fade {
+    0% { opacity: 0; } /* A página começa completamente transparente */
+    100% { opacity: 1; } /* A página termina completamente opaca, criando um efeito de fade-in suave */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +14,8 @@ body {
     background-color: #1a1a1a;
     color: #ffff;
     height: 100vh;
+
+    animation: fade 1.5s;
 }
 
 .container-principal{
