@@ -1,0 +1,40 @@
+POST http://localhost:2525/imposters
+Content-Type: application/json
+
+{
+  "name": "Exercicio14",
+  "port": 4514,
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 415,
+            "headers": { "Content-Type": "application/json" },
+            "body": {
+              "error": "Unsupported media type",
+              "message": "'Content-Type: application/json' é obrigatorio"
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": { 
+            "method": "POST" 
+            },
+          "not": {
+            "equals": {
+              "headers": { "Content-Type": "application/json" }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+
+###
+POST http://localhost:4514/api/login
+Content-Type: text/plain

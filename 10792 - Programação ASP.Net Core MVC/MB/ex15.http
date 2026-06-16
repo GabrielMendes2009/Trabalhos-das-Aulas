@@ -1,0 +1,36 @@
+POST http://localhost:2525/imposters
+Content-Type: application/json
+
+{
+  "name": "Exercicio15",
+  "port": 4515,
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 404,
+            "headers": { 
+                "Content-Type": "application/json" 
+            },
+            "body": {
+              "error": "not found"
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": { 
+            
+            "method": "GET" 
+            }
+        }
+      ]
+    }
+  ]
+}
+
+###
+GET http://localhost:4515/ipa/kdi

@@ -1,49 +1,46 @@
 POST http://localhost:2525/imposters
-content-Type: application/json
+Content-Type: application/json
 
 {
-   "port":4509,
-   "protocol":"http",
-   "name":"Exercicio8",
-   "stubs":[
-      {
-         "responses":[
-            {
-               "is":{
-                  "statusCode":400,
-                  "headers":{
-                     "Content-Type":"application/json"
-                  },
-                  "body":{
-                     "title":"duplicate"
-                  }
-               }
+  "port": 4511,
+  "protocol": "http",
+  "name": "Exercicio10",
+  "stubs": [
+    {
+      "predicates": [
+        {
+          "equals": {
+            "method": "POST",
+            "path": "/api/tasks"
+          }
+        },
+        {
+          "equals": {
+            "body": {
+              "title": "duplicate"
             }
-         ],
-         "predicates":[
-            {
-               "equals":{
-                  "path":"/api/tasks",
-                  "method":"POST"
-               }
+          }
+        }
+      ],
+      "responses": [
+        {
+          "is": {
+            "statusCode": 409,
+            "headers": {
+              "Content-Type": "application/json"
             },
-            {
-               "not":{
-                  "contains":{
-                     "body":{
-                        "value":"string",
-                        "sensor_id":"1"
-                     }
-                  }
-               }
+            "body": {
+              "error": "duplicate_task"
             }
-         ]
-      }
-   ]
+          }
+        }
+      ]
+    }
+  ]
 }
 
 ###
-POST http://localhost:4509/api/temperature
-content-Type: application/json
+POST http://localhost:4511/api/tasks
+Content-Type: application/json
 
-{"value":"string"}
+{"title": "duplicate"}
