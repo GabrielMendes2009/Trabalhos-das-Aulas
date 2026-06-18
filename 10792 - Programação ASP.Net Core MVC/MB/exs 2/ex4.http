@@ -1,0 +1,187 @@
+POST http://localhost:2525/imposters
+Content-Type: application/json
+
+{
+  "name":"Ex4",
+  "port":4444,
+  "protocol":"http",
+  "stubs":[
+    {
+      "responses":[{
+        "is":{
+          "statusCode":400,
+          "headers":{"Content-Type": "application/json"},
+          "body":{"erro": "campos obrigatórios em falta: cliente, livro_id e data_emprestimo"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/emprestimos", "method": "POST"}},
+        {"exists":{"body":{"cliente": false}}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":409,
+          "headers":{"Content-Type": "application/json"},
+          "body":{"erro": "livro já se encontra emprestado no momento"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/emprestimos","method":"POST"}},
+        {"equals":{"body":{"livro_id": 99}}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":201,
+          "headers":{"Content-Type":"application/json"},
+          "body":{
+            "mensagem":"empréstimo criado com sucesso",
+            "emprestimo_id": 501,
+            "livro_id": 1,
+            "cliente":"andreia"
+          }
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/emprestimos","method":"POST"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":404,
+          "headers":{"Content-Type": "application/json"},
+          "body":{"erro":"empréstimo não encontrado ou já devolvido"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/emprestimos/99/devolucao","method":"PUT"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"mensagem":"livro devolvido com sucesso e novamente disponível"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/emprestimos/501/devolucao","method":"PUT"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":409,
+          "headers":{"Content-Type": "application/json"},
+          "body":{"erro": "não é possível remover o livro enquanto existirem empréstimos ativos"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/livros/2","method":"DELETE"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"mensagem":"livro removido com sucesso do catálogo"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/livros/1","method":"DELETE"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":{
+            "id":1,
+            "titulo":"O Pequeno Príncipe",
+            "autor":"Antoine de Saint-Exupéry",
+            "disponivel":true
+          }
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/livros/1","method":"GET"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":[
+            {"id":1,"titulo":"O Pequeno Príncipe","autor":"Antoine de Saint-Exupéry","disponivel":true},
+            {"id":2,"titulo":"1984","autor":"George Orwell","disponivel":false},
+            {"id":3,"titulo":"Bond of Mine","autor":"Kittenk4","disponivel":true}
+          ]
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/livros","method":"GET"}}
+      ]
+    }
+  ]
+}
+
+###
+GET http://localhost:4444/api/livros
+Content-Type: application/json
+
+###
+GET http://localhost:4444/api/livros/1
+Content-Type: application/json
+
+###
+POST http://localhost:4444/api/emprestimos
+Content-Type: application/json
+
+{
+  "livro_id":1,
+  "data_emprestimo":"2026-06-16"
+}
+
+###
+POST http://localhost:4444/api/emprestimos
+Content-Type: application/json
+
+{
+  "cliente":"Matilda",
+  "livro_id":99,
+  "data_emprestimo":"2026-06-16"
+}
+
+###
+POST http://localhost:4444/api/emprestimos
+Content-Type: application/json
+
+{
+  "cliente":"Lalau",
+  "livro_id":1,
+  "data_emprestimo":"2026-06-16"
+}
+
+###
+PUT http://localhost:4444/api/emprestimos/99/devolucao
+Content-Type: application/json
+
+###
+PUT http://localhost:4444/api/emprestimos/501/devolucao
+Content-Type: application/json
+
+###
+DELETE http://localhost:4444/api/livros/2
+Content-Type: application/json
+
+###
+DELETE http://localhost:4444/api/livros/1
+Content-Type: application/json
