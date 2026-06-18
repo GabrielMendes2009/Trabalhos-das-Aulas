@@ -1,0 +1,183 @@
+POST http://localhost:2525/imposters
+Content-Type: application/json
+
+{
+  "name":"ex6",
+  "port":6666,
+  "protocol":"http",
+  "stubs":[
+    {
+      "responses":[{
+        "is":{
+          "statusCode":400,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"erro":"campos obrigatórios em falta: título e descrição"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/tarefas","method":"POST"}},
+        {"or":[
+          {"exists":{"body":{"titulo":false}}},
+          {"exists":{"body":{"descricao":false}}}
+        ]}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":400,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"erro":"o título não pode ser vazio"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/tarefas","method":"POST"}},
+        {"deepEquals":{"body":{"titulo":""}}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":201,
+          "headers":{"Content-Type":"application/json"},
+          "body":{
+            "mensagem":"tarefa criada com sucesso",
+            "id":10,
+            "titulo":"planear reunião",
+            "descricao":"preparar reunião de equipa",
+            "estado":"pendente"
+          }
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/tarefas","method":"POST"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":{
+            "mensagem":"tarefa atualizada com sucesso",
+            "id":1,
+            "titulo":"comprar café",
+            "descricao":"ir ao supermercado local",
+            "estado":"concluída"
+          }
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/tarefas/1","method":"PUT"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":409,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"erro":"não é possível eliminar tarefas que ainda não estão concluídas"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/tarefas/2","method":"DELETE"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"mensagem":"tarefa eliminada com sucesso"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/tarefas/1","method":"DELETE"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":{
+            "id":1,
+            "titulo":"comprar café",
+            "descricao":"ir ao supermercado local",
+            "estado":"pendente"
+          }
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/tarefas/1","method":"GET"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":[
+            {"id":1,"titulo":"comprar café","descricao":"ir ao supermercado","estado":"pendente"},
+            {"id":2,"titulo":"corrigir bug","descricao":"resolver erro crítico","estado":"pendente"},
+            {"id":3,"titulo":"enviar relatório","descricao":"enviar relatório mensal","estado":"concluída"}
+          ]
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/tarefas","method":"GET"}}
+      ]
+    }
+  ]
+}
+
+###
+GET http://localhost:6666/api/tarefas
+Content-Type: application/json
+
+###
+GET http://localhost:6666/api/tarefas/1
+Content-Type: application/json
+
+###
+POST http://localhost:6666/api/tarefas
+Content-Type: application/json
+
+{
+  "titulo":"nova Tarefa"
+}
+
+###
+POST http://localhost:6666/api/tarefas
+Content-Type: application/json
+
+{
+  "titulo":"",
+  "descricao":"falha"
+}
+
+###
+POST http://localhost:6666/api/tarefas
+Content-Type: application/json
+
+{
+  "titulo":"planear reuniao",
+  "descricao":"preparar reuniao"
+}
+
+###
+PUT http://localhost:6666/api/tarefas/1
+Content-Type: application/json
+
+{
+  "descricao":"ir ao supermercado",
+  "estado":"concluida"
+}
+
+###
+DELETE http://localhost:6666/api/tarefas/2
+Content-Type: application/json
+
+###
+DELETE http://localhost:6666/api/tarefas/1
+Content-Type: application/json
