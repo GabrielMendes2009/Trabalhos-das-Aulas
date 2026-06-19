@@ -1,0 +1,184 @@
+POST http://localhost:2525/imposters
+Content-Type: application/json
+
+{
+  "name":"Ex5GestaoFuncionarios",
+  "port":5555,
+  "protocol":"http",
+  "stubs":[
+    {
+      "responses":[{
+        "is":{
+          "statusCode":400,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"erro":"campos obrigatórios em falta: nome, cargo e salário"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/funcionarios","method":"POST"}},
+        {"or":[
+          {"exists":{"body":{"nome": false}}},
+          {"exists":{"body":{"cargo": false}}},
+          {"exists":{"body":{"salario": false}}}
+        ]}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":400,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"erro":"o salário não pode ser inferior ao salário mínimo (760€)"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/funcionarios","method":"POST"}},
+        {"deepEquals":{"body":{"salario":500}}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":201,
+          "headers":{"Content-Type":"application/json"},
+          "body":{
+            "mensagem":"funcionário registado com sucesso",
+            "id":105,
+            "nome":"beatriz",
+            "cargo":"engenheira de software",
+            "salario":1200
+          }
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/funcionarios","method":"POST"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":400,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"erro":"não é permitido definir salário abaixo de 760€"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/funcionarios/1/salario","method":"PUT"}},
+        {"deepEquals":{"body":{"salario":600}}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":{
+            "mensagem":"salário atualizado com sucesso",
+            "id":1,
+            "novo_salario":1500
+          }
+        }
+      }],
+      "predicates":[
+        {"equals":{"path": "/api/funcionarios/1/salario","method":"PUT"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":409,
+          "headers":{"Content-Type": "application/json"},
+          "body":{"erro":"não é possível remover o funcionário devido a tarefas pendentes"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/funcionarios/2","method":"DELETE"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"mensagem":"funcionário removido com sucesso"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/funcionarios/1","method":"DELETE"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":[
+            {"id":1,"nome":"miguel","cargo":"gestor de projeto","salario":1400},
+            {"id":2,"nome":"rita","cargo":"designer UI/UX","salario":950},
+            {"id":3,"nome":"pedro","cargo":"técnico de suporte","salario":800}
+          ]
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/funcionarios","method":"GET"}}
+      ]
+    }
+  ]
+}
+
+###
+GET http://localhost:5555/api/funcionarios
+Content-Type: application/json
+
+###
+POST http://localhost:5555/api/funcionarios
+Content-Type: application/json
+
+{
+  "nome":"gabriel",
+  "salario":1200
+}
+
+###
+POST http://localhost:5555/api/funcionarios
+Content-Type: application/json
+
+{
+  "nome":"gabriel",
+  "cargo":"programador",
+  "salario":500
+}
+
+###
+POST http://localhost:5555/api/funcionarios
+Content-Type: application/json
+
+{
+  "nome":"gabriel",
+  "cargo":"desenvolvedora",
+  "salario":1200
+}
+
+###
+PUT http://localhost:5555/api/funcionarios/1/salario
+Content-Type: application/json
+
+{
+  "salario":600
+}
+
+###
+PUT http://localhost:5555/api/funcionarios/1/salario
+Content-Type: application/json
+
+{
+  "salario":1500
+}
+
+###
+DELETE http://localhost:5555/api/funcionarios/2
+Content-Type: application/json
+
+###
+DELETE http://localhost:5555/api/funcionarios/1
+Content-Type: application/json

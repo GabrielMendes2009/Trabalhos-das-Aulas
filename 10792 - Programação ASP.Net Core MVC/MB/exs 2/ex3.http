@@ -1,0 +1,176 @@
+
+{
+  "name":"Ex3",
+  "port":3333,
+  "protocol":"http",
+  "stubs":[
+    {
+      "responses":[{
+        "is":{
+          "statusCode":400,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"error":"a data de saída não pode ser anterior à data de entrada"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/reservas","method":"POST"}},
+        {"equals":{"body":{"checkout":"2026-06-15"}}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":409,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"error":"quarto indisponível para as datas selecionadas"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/reservas","method":"POST"}},
+        {"equals":{"body":{"tipo_quarto":"suite executiva"}}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":201,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"mensagem":"reserva registada com sucesso","id":103}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/reservas","method":"POST"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":[
+            {"id":1,"cliente":"mariana","checkin":"2026-07-20","checkout":"2026-07-25","tipo_quarto":"individual"},
+            {"id":2,"cliente":"rodrigo","checkin":"2026-05-01","checkout":"2026-05-05","tipo_quarto":"familiar"}
+          ]
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/reservas","method":"GET"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":400,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"erro":"não é possível alterar a reserva após o prazo permitido"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/reservas/2","method":"PUT"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"mensagem":"reserva atualizada com sucesso"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/reservas/1","method":"PUT"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":400,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"erro":"cancelamento não permitido após o início da estadia"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/reservas/2","method":"DELETE"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"mensagem":"reserva cancelada com sucesso"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/reservas/1","method":"DELETE"}}
+      ]
+    }
+  ]
+}
+
+
+###
+GET http://localhost:3333/api/reservas
+Content-Type: application/json
+
+
+###
+POST http://localhost:3333/api/reservas
+Content-Type: application/json
+
+{
+  "cliente":"Jason",
+  "checkin":"2026-06-20",
+  "checkout":"2026-06-15",
+  "tipo_quarto":"standard"
+}
+
+
+###
+POST http://localhost:3333/api/reservas
+Content-Type: application/json
+
+{
+  "cliente":"Kaneki",
+  "checkin":"2026-07-01",
+  "checkout":"2026-07-05",
+  "tipo_quarto":"suite presidencial"
+}
+
+###
+POST http://localhost:3333/api/reservas
+Content-Type: application/json
+
+{
+  "cliente":"Dyana",
+  "checkin":"2026-07-01",
+  "checkout":"2026-07-05",
+  "tipo_quarto":"standard"
+}
+
+###
+PUT http://localhost:3333/api/reservas/1
+Content-Type: application/json
+
+{
+  "tipo_quarto":"duplo"
+}
+
+
+###
+PUT http://localhost:3333/api/reservas/2
+Content-Type: application/json
+
+{
+  "tipo_quarto":"standard"
+}
+
+
+###
+DELETE http://localhost:3333/api/reservas/2
+Content-Type: application/json
+
+
+###
+DELETE http://localhost:3333/api/reservas/1
+Content-Type: application/json

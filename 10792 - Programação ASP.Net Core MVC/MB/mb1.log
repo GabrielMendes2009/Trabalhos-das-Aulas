@@ -1,2 +1,4 @@
-{"level":"info","message":"[mb:2525] mountebank v2.9.4 now taking orders - point your browser to http://localhost:2525/ for help","timestamp":"2026-06-05T13:08:08.269Z"}
-{"level":"info","message":"[mb:2525] GET /images/book.jpg","timestamp":"2026-06-05T13:08:25.677Z"}
+{"level":"info","message":"[mb:2525] mountebank v2.9.4 now taking orders - point your browser to http://localhost:2525/ for help","timestamp":"2026-06-15T09:48:09.408Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2026-06-15T09:57:23.308Z"}
+{"level":"info","message":"[http:4508 Exercicio8] Open for business...","timestamp":"2026-06-15T09:57:23.323Z"}
+{"level":"info","message":"[http:4508 Exercicio8] ::ffff:127.0.0.1:50443 => POST /api/temperature","timestamp":"2026-06-15T09:58:25.357Z"}

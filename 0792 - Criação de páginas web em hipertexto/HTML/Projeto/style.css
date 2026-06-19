@@ -13,14 +13,14 @@
 body {
     background-color: #1a1a1a;
     color: #ffff;
-    height: 100vh;
+    min-height: 100vh;
 
     animation: fade 1.5s;
 }
 
 .container-principal{
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .menu-lateral {
@@ -31,6 +31,7 @@ body {
     flex-direction: column;
     gap: 30px;
     border-right: 5px solid #3a43e4;
+    height: auto;
 }
 
 .logo-velvet {
@@ -129,4 +130,104 @@ body {
 
 .link-p6.ativo {
     background-color: #1bd13a; color: white;
+}
+
+.introducao h1 {
+    font-size: 42px;
+    color: #3a43e4; 
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.introducao p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #cccccc;
+    font-family: "Arial", sans-serif; 
+    max-width: 800px;
+}
+
+.separador {
+    border: none;
+    height: 4px;
+    background-color: #3a43e4;
+    margin: 40px 0;
+    transform: skewX(-15deg);
+}
+
+.grid-sinopses {
+    display: grid;
+    /* Força a criação de 2 ou 3 colunas dependendo do espaço, dividindo os cards */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 25px;
+    width: 100%;
+    align-items: start; /* Impede que os cards estiquem tortos para baixo */
+}
+
+.sinopse-card {
+    background-color: #0b0b0b;
+    border: 2px solid #222;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.sinopse-card:hover {
+    border-color: #3a43e4;
+}
+
+.sinopse-card h2 {
+    font-size: 20px;
+    color: #ffff;
+    margin-bottom: 15px;
+}
+
+.sinopse-card p {
+    font-size: 14px;
+    color: #cccccc;
+    line-height: 1.4;
+    flex-grow: 1; /* Faz o parágrafo ocupar todo o espaço disponível */
+}
+
+.container-botao {
+    display: flex;
+    justify-content: center; /* Joga o botão pro meio do card */
+    width: 100%;
+    margin-top: 15px;       /* Dá um espacinho do texto */
+}
+
+.btn-recortado {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #222;
+    padding: 10px 25px;
+    font-size: 14px;
+    text-align: center;
+    transform: skewX(-10deg); /* Efeito recortado/inclinado */
+    transition: all 0.2s ease;
+}
+
+.btn-recortado:hover {
+    transform: skewX(-10deg) scale(1.05); /* Aumenta um pouco no hover */
+    background-color: #000000; /* Muda a cor de fundo no hover */
+}
+
+.p1-btn:hover {
+    background-color: #a80fff; color: white;
+}
+
+.p3-btn:hover {
+    background-color: #00bfff;
+}
+.p4-btn:hover {
+    background-color: #ffe52c;
+}
+.p5-btn:hover {
+    background-color: #d92323;
+}
+.p6-btn:hover {
+    background-color: #1bd13a;
 }

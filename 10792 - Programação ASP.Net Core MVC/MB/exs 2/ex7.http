@@ -1,0 +1,256 @@
+POST http://localhost:2525/imposters
+Content-Type: application/json
+
+{
+  "name":"GestaoClientesPedidos",
+  "port":7777,
+  "protocol":"http",
+  "stubs":[
+    {
+      "responses":[{
+        "is":{
+          "statusCode":400,
+          "headers":{"Content-Type": "application/json"},
+          "body":{"erro":"campos obrigatórios em falta: cliente_id, produto e quantidade"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/pedidos","method":"POST"}},
+        {"or":[
+          {"exists":{"body":{"cliente_id":false}}},
+          {"exists":{"body":{"produto":false}}},
+          {"exists":{"body":{"quantidade":false}}}
+        ]}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":404,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"erro":"cliente não encontrado no sistema"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/pedidos","method":"POST"}},
+        {"deepEquals":{"body":{"cliente_id":99}}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":400,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"erro":"quantidade inválida, deve ser superior a zero"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/pedidos","method":"POST"}},
+        {"deepEquals":{"body":{"quantidade":0}}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":201,
+          "headers":{"Content-Type":"application/json"},
+          "body":{
+            "mensagem":"pedido criado com sucesso",
+            "pedido_id":501,
+            "cliente_id":1,
+            "produto":"rato sem fios",
+            "quantidade":2,
+            "estado":"em processamento"
+          }
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/pedidos","method":"POST"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":{
+            "mensagem":"estado do pedido atualizado com sucesso",
+            "pedido_id":1,
+            "novo_estado":"enviado"
+          }
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/pedidos/1","method":"PUT"}},
+        {"or":[
+          {"deepEquals":{"body":{"estado":"em processamento"}}},
+          {"deepEquals":{"body":{"estado":"enviado"}}},
+          {"deepEquals":{"body":{"estado":"entregue"}}}
+        ]}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":400,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"erro":"estado inválido, apenas 'em processamento', 'enviado' ou 'entregue' são permitidos"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/pedidos/1","method":"PUT"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":409,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"erro":"não é possível cancelar o pedido no estado atual"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/pedidos/2","method":"DELETE"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":{"mensagem":"pedido cancelado com sucesso"}
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/pedidos/1","method":"DELETE"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":[
+            {"pedido_id":1,"produto":"teclado","quantidade":1,"estado":"em processamento"},
+            {"pedido_id":2,"produto":"monitor","quantidade":2,"estado":"enviado"}
+          ]
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/clientes/1/pedidos","method":"GET"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":201,
+          "headers":{"Content-Type":"application/json"},
+          "body":{
+            "mensagem":"cliente adicionado com sucesso",
+            "cliente_id":4,
+            "nome":"joana"
+          }
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/clientes","method":"POST"}}
+      ]
+    },
+    {
+      "responses":[{
+        "is":{
+          "statusCode":200,
+          "headers":{"Content-Type":"application/json"},
+          "body":[
+            {"id":1,"nome":"maria"},
+            {"id":2,"nome":"joão"},
+            {"id":3,"nome":"julia"}
+          ]
+        }
+      }],
+      "predicates":[
+        {"equals":{"path":"/api/clientes","method":"GET"}}
+      ]
+    }
+  ]
+}
+
+###
+GET http://localhost:7777/api/clientes
+Content-Type: application/json
+
+###
+POST http://localhost:7777/api/clientes
+Content-Type: application/json
+
+{
+  "nome":"gabriel"
+}
+
+###
+GET http://localhost:7777/api/clientes/1/pedidos
+Content-Type: application/json
+
+###
+POST http://localhost:7777/api/pedidos
+Content-Type: application/json
+
+{
+  "cliente_id":1,
+  "quantidade":2
+}
+
+###
+POST http://localhost:7777/api/pedidos
+Content-Type: application/json
+
+{
+  "cliente_id":99,
+  "produto":"mouse sem fio",
+  "quantidade":1
+}
+
+###
+POST http://localhost:7777/api/pedidos
+Content-Type: application/json
+
+{
+  "cliente_id":1,
+  "produto":"mouse sem fios",
+  "quantidade":0
+}
+
+###
+POST http://localhost:7777/api/pedidos
+Content-Type: application/json
+
+{
+  "cliente_id":1,
+  "produto":"mouse sem fios",
+  "quantidade":2
+}
+
+###
+PUT http://localhost:7777/api/pedidos/1
+Content-Type: application/json
+
+{
+  "estado":"cancelado"
+}
+
+###
+PUT http://localhost:7777/api/pedidos/1
+Content-Type: application/json
+
+{
+  "estado":"enviado"
+}
+
+###
+DELETE http://localhost:7777/api/pedidos/2
+Content-Type: application/json
+
+###
+DELETE http://localhost:7777/api/pedidos/1
+Content-Type: application/json
+

@@ -1,0 +1,49 @@
+POST http://localhost:2525/imposters
+content-Type: application/json
+
+{
+   "port":4508,
+   "protocol":"http",
+   "name":"Exercicio9",
+   "stubs":[
+      {
+         "responses":[
+            {
+               "is":{
+                  "statusCode":400,
+                  "headers":{
+                     "Content-Type":"application/json"
+                  },
+                  "body":{
+                     "status":"missing_field"
+                  }
+               }
+            }
+         ],
+         "predicates":[
+            {
+               "equals":{
+                  "path":"/api/temperature",
+                  "method":"POST"
+               }
+            },
+            {
+               "not":{
+                  "contains":{
+                     "body":{
+                        "value":"string",
+                        "sensor_id":"1"
+                     }
+                  }
+               }
+            }
+         ]
+      }
+   ]
+}
+
+###
+POST http://localhost:4508/api/temperature
+content-Type: application/json
+
+{"value":"string"}

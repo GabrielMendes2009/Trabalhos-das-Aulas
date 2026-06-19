@@ -1,0 +1,68 @@
+POST http://localhost:2525/imposters
+Content-Type: application/json
+
+{
+  "name": "Exercicio13",
+  "port": 4513,
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": { "Content-Type": "application/json" },
+            "body": {
+              "username": "player",
+              "email": "player@gmail.not",
+              "role": "admin",
+              "token": "valid"
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": {
+            "path": "/api/profile",
+            "method": "GET",
+            "headers": { "authorization": "Bearer validtoken" }
+          }
+        }
+      ]
+    },
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 403,
+            "headers": { "Content-Type": "application/json" },
+            "body": {
+              "error": "forbidden"
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": {
+            "path": "/api/profile",
+            "method": "GET"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+###
+
+GET http://localhost:4513/api/profile
+authorization: Bearer validtoken
+
+###
+GET http://localhost:4513/api/profile
+
+###
+GET http://localhost:4513/api/profile
+authorization: Bearer tokeninvalido

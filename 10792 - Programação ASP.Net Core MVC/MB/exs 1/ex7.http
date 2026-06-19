@@ -1,0 +1,50 @@
+POST http://localhost:2525/imposters
+content-Type: application/json
+
+{
+   "port":4507,
+   "protocol":"http",
+   "name":"Exercicio7",
+   "stubs":[
+      {
+         "responses":[
+            {
+               "is":{
+                  "statusCode":201,
+                  "headers":{
+                     "Content-Type":"application/json"
+                  },
+                  "body":{
+                     "status":"Ok",
+                     "token":"valid"
+                  }
+               }
+            }
+         ],
+         "predicates":[
+            {
+               "equals":{
+                  "path":"/api/users",
+                  "method":"POST",
+                  "headers":{
+                     "Content-Type":"application/json"
+                  }
+               }
+            },
+            {
+               "not":{
+                  "contains":{
+                     "body":{
+                        "email":"exists@example.com"
+                     }
+                  }
+               }
+            }
+         ]
+      }
+   ]
+}
+
+###
+POST http://localhost:4507/api/users
+content-Type: application/json

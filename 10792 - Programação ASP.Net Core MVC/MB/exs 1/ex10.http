@@ -1,0 +1,46 @@
+POST http://localhost:2525/imposters
+Content-Type: application/json
+
+{
+  "port": 4511,
+  "protocol": "http",
+  "name": "Exercicio10",
+  "stubs": [
+    {
+      "predicates": [
+        {
+          "equals": {
+            "method": "POST",
+            "path": "/api/tasks"
+          }
+        },
+        {
+          "equals": {
+            "body": {
+              "title": "duplicate"
+            }
+          }
+        }
+      ],
+      "responses": [
+        {
+          "is": {
+            "statusCode": 409,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "error": "duplicate_task"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+
+###
+POST http://localhost:4511/api/tasks
+Content-Type: application/json
+
+{"title": "duplicate"}
