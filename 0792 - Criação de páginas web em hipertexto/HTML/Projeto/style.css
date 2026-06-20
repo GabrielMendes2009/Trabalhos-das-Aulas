@@ -64,6 +64,7 @@ body {
     background-color: #222;
     font-size: 18px;
     transition: all 0.3 ease;
+    border-radius: 5px;
 
     transform: skewX(-10deg);
 }
@@ -72,11 +73,16 @@ body {
 .menu-lateral ul li a:hover {
     transform: skewX(-10deg) scale(1.05);
     color: #000000;
+    border-radius: 5px;
 }
 
 /* Efeito de hover específico para cada link, alterando a cor de fundo */
 .link-p1:hover {
     background-color: #a80fff;
+}
+
+.link-p2:hover {
+    background-color: #990000;
 }
 
 .link-p3:hover {
@@ -118,6 +124,7 @@ body {
 
 /* Estilização do link ativo no menu lateral, aplicando transformação, desabilitando eventos de clique e garantindo que o texto fique branco */
 .menu-lateral ul li a.ativo {
+    border-radius: 5px;
     transform: skewX(-10deg) scale(1.05);
     pointer-events: none; /* Impede o usuário de clicar na página que já está aberta */
     color: #ffffff !important; /* Garante que o texto fique branco */
@@ -126,22 +133,32 @@ body {
 /* Efeito de hover específico para cada link ativo, alterando a cor de fundo */
 .link-p1.ativo {
     background-color: #a80fff;
+    border-radius: 5px;
+}
+
+.link-p2.ativo {
+    background-color: #990000;
+    border-radius: 5px;
 }
 
 .link-p3.ativo {
     background-color: #00bfff;
+    border-radius: 5px;
 }
 
 .link-p4.ativo {
     background-color: #ffe52c;
+    border-radius: 5px;
 }
 
 .link-p5.ativo {
     background-color: #d92323;
+    border-radius: 5px;
 }
 
 .link-p6.ativo {
     background-color: #1bd13a; color: white;
+    border-radius: 5px;
 }
 
 /* Estilização da seção de introdução, definindo layout flexível em coluna e alinhamento central */
@@ -173,8 +190,7 @@ body {
 /* Estilização da grade de sinopses, utilizando grid layout para organizar os cards em colunas responsivas */
 .grid-sinopses {
     display: grid;
-    /* Força a criação de 2 ou 3 colunas dependendo do espaço, dividindo os cards */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
     gap: 25px;
     width: 100%;
     align-items: start; /* Impede que os cards estiquem tortos para baixo */
@@ -184,16 +200,78 @@ body {
 .sinopse-card {
     background-color: #0b0b0b;
     border: 2px solid #222;
-    padding: 25px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites do card */
     justify-content: space-between;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Transição suave para transformações e mudanças de cor da borda */
+    height: 580px; /* Garante que os cards tenham a mesma altura, preenchendo o espaço disponível na grade */
 }
 
 /* Efeito de hover nos cards de sinopse, aplicando transformação e mudança de cor da borda */
 .sinopse-card:hover {
     border-color: #3a43e4;
+    transform: translateY(-5px); /* Move o card para cima no hover */
+}
+
+.p1-card:hover {
+    border-color: #a80fff;
+    border-radius: 10px; /* Adiciona cantos arredondados ao card no hover */
+}
+
+.p2-card:hover {
+    border-color: #990000;
+    border-radius: 10px; /* Adiciona cantos arredondados ao card no hover */
+}
+
+.p3-card:hover {
+    border-color: #00bfff;
+    border-radius: 10px; /* Adiciona cantos arredondados ao card no hover */
+}
+
+.p4-card:hover {
+    border-color: #ffe52c;
+    border-radius: 10px; /* Adiciona cantos arredondados ao card no hover */
+}
+
+.p5-card:hover {
+    border-color: #d92323;
+    border-radius: 10px; /* Adiciona cantos arredondados ao card no hover */
+}
+
+.p6-card:hover {
+    border-color: #1bd13a;
+    border-radius: 10px; /* Adiciona cantos arredondados ao card no hover */
+}
+
+.capa-jogo {
+    width: 100%;
+    height: 320px; /* Define uma altura fixa para a capa do jogo, garantindo consistência entre os cards */
+    margin-bottom: 0;
+    border-radius: 5px; /* Adiciona cantos arredondados à imagem */
+    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse os limites do card */
+}
+
+.capa-jogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o espaço do card sem distorcer */
+    display: block; /* Garante que a imagem seja tratada como um bloco para evitar espaços indesejados */
+    transition: transform 0.5s ease; /* Transição suave para o efeito de zoom */
+}
+
+.sinopse-card:hover .capa-jogo img {
+    transform: scale(1.06); /* Aumenta a imagem no hover para criar um efeito de zoom */
+    transition: transform 0.5s ease; /* Transição suave para o efeito de zoom */
+}
+
+.conteudo-sinopse {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 25px;
+    justify-content: space-between; /* Garante que o conteúdo seja distribuído uniformemente dentro do card, com espaço entre os elementos */
+    flex-grow: 1; /* Permite que o conteúdo cresça para preencher o espaço disponível dentro do card */
 }
 
 /* Estilização do título dentro dos cards de sinopse, definindo tamanho da fonte, cor e margem inferior */
@@ -230,6 +308,7 @@ body {
     text-align: center;
     transform: skewX(-10deg); /* Efeito recortado/inclinado */
     transition: all 0.2s ease;
+    border-radius: 5px; /* Adiciona cantos arredondados ao botão */
 }
 
 /* Efeito de hover no botão recortado, aplicando transformação para aumentar o tamanho e mudar a cor de fundo */
@@ -241,6 +320,10 @@ body {
 /* Efeito de hover específico para cada botão, alterando a cor de fundo */
 .p1-btn:hover {
     background-color: #a80fff; color: white;
+}
+
+.p2-btn:hover {
+    background-color: #990000;
 }
 
 .p3-btn:hover {
