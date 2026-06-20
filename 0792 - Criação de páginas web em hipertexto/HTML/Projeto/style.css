@@ -1,3 +1,7 @@
+/* ==========================================
+       CONFIGURAÇÕES GERAIS E ANIMAÇÕES
+   ========================================== */
+
 /* Animação de fade-in para a página */
 @keyframes fade {
     0% { opacity: 0; } /* A página começa completamente transparente */
@@ -17,15 +21,19 @@ body {
     background-color: #1a1a1a;
     color: #ffff;
     min-height: 100vh;
-
     animation: fade 1.5s;
 }
 
 /* Estilização do container principal, utilizando flexbox para organizar os elementos filhos */
-.container-principal{
+.container-principal {
     display: flex;
     min-height: 100vh;
 }
+
+
+/* ==========================================
+        MENU LATERAL (ESTRUTURA E LINKS)
+   ========================================== */
 
 /* Estilização do menu lateral, definindo largura, cor de fundo, padding e layout flexível */
 .menu-lateral {
@@ -47,60 +55,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* Estilização da lista de links no menu lateral, removendo marcadores e definindo layout flexível em coluna */
-.menu-lateral ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Estilização dos links no menu lateral, definindo cor, padding, fundo, tamanho da fonte e efeitos de transição e transformação */
-.menu-lateral ul li a{
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 15px 20px;
-    background-color: #222;
-    font-size: 18px;
-    transition: all 0.3 ease;
-    border-radius: 5px;
-
-    transform: skewX(-10deg);
-}
-
-/* Efeito de hover nos links do menu lateral, aplicando transformação e mudança de cor */
-.menu-lateral ul li a:hover {
-    transform: skewX(-10deg) scale(1.05);
-    color: #000000;
-    border-radius: 5px;
-}
-
-/* Efeito de hover específico para cada link, alterando a cor de fundo */
-.link-p1:hover {
-    background-color: #a80fff;
-}
-
-.link-p2:hover {
-    background-color: #990000;
-}
-
-.link-p3:hover {
-    background-color: #00bfff;
-}
-
-.link-p4:hover {
-    background-color: #ffe52c;
-}
-
-.link-p5:hover {
-    background-color: #d92323;
-}
-
-.link-p6:hover {
-    background-color: #1bd13a; color: white;
-}
-
 /* Estilização do link da logo, removendo sublinhado, definindo cor e largura, além de aplicar transição para efeitos de transformação */
 .link-index {
     text-decoration: none !important; /* Força o sumiço do sublinhado */
@@ -115,11 +69,32 @@ body {
     color: #3a43e4;
 }
 
-.conteudo-principal {
-    flex: 1; /* Ocupa todo o resto do espaço da tela */
-    padding: 50px;
-    background-color: #141414;
-    
+/* Estilização da lista de links no menu lateral, removendo marcadores e definindo layout flexível em coluna */
+.menu-lateral ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilização dos links no menu lateral, definindo cor, padding, fundo, tamanho da fonte e efeitos de transição e transformação */
+.menu-lateral ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    background-color: #222;
+    font-size: 18px;
+    transition: all 0.3 ease;
+    border-radius: 5px;
+    transform: skewX(-10deg);
+}
+
+/* Efeito de hover nos links do menu lateral, aplicando transformação e mudança de cor */
+.menu-lateral ul li a:hover {
+    transform: skewX(-10deg) scale(1.05);
+    color: #000000;
+    border-radius: 5px;
 }
 
 /* Estilização do link ativo no menu lateral, aplicando transformação, desabilitando eventos de clique e garantindo que o texto fique branco */
@@ -130,35 +105,60 @@ body {
     color: #ffffff !important; /* Garante que o texto fique branco */
 }
 
+
+/* ==========================================
+   CORES DOS HOVERS E ATIVOS DO MENU (P1 - P6)
+   ========================================== */
+
+/* Efeito de hover específico para cada link, alterando a cor de fundo */
+.link-p1:hover { 
+    background-color: #a80fff; 
+}
+.link-p2:hover { 
+    background-color: #990000; 
+}
+.link-p3:hover { 
+    background-color: #00bfff; 
+}
+.link-p4:hover { 
+    background-color: #ffe52c; 
+}
+.link-p5:hover { 
+    background-color: #d92323; 
+}
+.link-p6:hover { 
+    background-color: #1bd13a; color: white; 
+}
+
 /* Efeito de hover específico para cada link ativo, alterando a cor de fundo */
-.link-p1.ativo {
-    background-color: #a80fff;
-    border-radius: 5px;
+.link-p1.ativo { 
+    background-color: #a80fff; border-radius: 5px; 
+}
+.link-p2.ativo { 
+    background-color: #990000; border-radius: 5px; 
+}
+.link-p3.ativo { 
+    background-color: #00bfff; border-radius: 5px; 
+}
+.link-p4.ativo { 
+    background-color: #ffe52c; border-radius: 5px; 
+}
+.link-p5.ativo { 
+    background-color: #d92323; border-radius: 5px; 
+}
+.link-p6.ativo { 
+    background-color: #1bd13a; color: white; border-radius: 5px; 
 }
 
-.link-p2.ativo {
-    background-color: #990000;
-    border-radius: 5px;
-}
 
-.link-p3.ativo {
-    background-color: #00bfff;
-    border-radius: 5px;
-}
+/* ==========================================
+       CONTEÚDO PRINCIPAL E INTRODUÇÃO
+   ========================================== */
 
-.link-p4.ativo {
-    background-color: #ffe52c;
-    border-radius: 5px;
-}
-
-.link-p5.ativo {
-    background-color: #d92323;
-    border-radius: 5px;
-}
-
-.link-p6.ativo {
-    background-color: #1bd13a; color: white;
-    border-radius: 5px;
+.conteudo-principal {
+    flex: 1; /* Ocupa todo o resto do espaço da tela */
+    padding: 50px;
+    background-color: #141414;
 }
 
 /* Estilização da seção de introdução, definindo layout flexível em coluna e alinhamento central */
@@ -186,6 +186,11 @@ body {
     margin: 40px 0;
     transform: skewX(-15deg);
 }
+
+
+/* ==========================================
+     CARDS DE SINOPSES (GRID E LAYOUT BASE)
+   ========================================== */
 
 /* Estilização da grade de sinopses, utilizando grid layout para organizar os cards em colunas responsivas */
 .grid-sinopses {
@@ -215,35 +220,49 @@ body {
     transform: translateY(-5px); /* Move o card para cima no hover */
 }
 
-.p1-card:hover {
-    border-color: #a80fff;
-    border-radius: 10px; /* Adiciona cantos arredondados ao card no hover */
+/* Estilização do título dentro dos cards de sinopse, definindo tamanho da fonte, cor e margem inferior */
+.sinopse-card h2 {
+    font-size: 20px;
+    color: #ffff;
+    margin-bottom: 15px;
 }
 
-.p2-card:hover {
-    border-color: #990000;
-    border-radius: 10px; /* Adiciona cantos arredondados ao card no hover */
+/* Estilização do parágrafo dentro dos cards de sinopse, definindo tamanho da fonte, cor, altura da linha e fazendo o parágrafo ocupar todo o espaço disponível */
+.sinopse-card p {
+    font-size: 14px;
+    color: #cccccc;
+    line-height: 1.4;
+    flex-grow: 1; /* Faz o parágrafo ocupar todo o espaço disponível */
 }
 
-.p3-card:hover {
-    border-color: #00bfff;
-    border-radius: 10px; /* Adiciona cantos arredondados ao card no hover */
+
+/* ==========================================
+     HOVERS ESPECÍFICOS DOS CARDS (P1 - P6)
+   ========================================== */
+
+.p1-card:hover { 
+    border-color: #a80fff; border-radius: 10px; 
+}
+.p2-card:hover { 
+    border-color: #990000; border-radius: 10px; 
+}
+.p3-card:hover { 
+    border-color: #00bfff; border-radius: 10px; 
+}
+.p4-card:hover { 
+    border-color: #ffe52c; border-radius: 10px; 
+}
+.p5-card:hover { 
+    border-color: #d92323; border-radius: 10px; 
+}
+.p6-card:hover { 
+    border-color: #1bd13a; border-radius: 10px; 
 }
 
-.p4-card:hover {
-    border-color: #ffe52c;
-    border-radius: 10px; /* Adiciona cantos arredondados ao card no hover */
-}
 
-.p5-card:hover {
-    border-color: #d92323;
-    border-radius: 10px; /* Adiciona cantos arredondados ao card no hover */
-}
-
-.p6-card:hover {
-    border-color: #1bd13a;
-    border-radius: 10px; /* Adiciona cantos arredondados ao card no hover */
-}
+/* ==========================================
+      IMAGENS E CONTEÚDO INTERNO DOS CARDS
+   ========================================== */
 
 .capa-jogo {
     width: 100%;
@@ -270,24 +289,14 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px 25px;
-    justify-content: space-between; /* Garante que o conteúdo seja distribuído uniformemente dentro do card, com espaço entre os elementos */
+    justify-content: space-between; /* Garante que o conteúdo seja distribuído uniformemente dentro do card, com espaço entre os elements */
     flex-grow: 1; /* Permite que o conteúdo cresça para preencher o espaço disponível dentro do card */
 }
 
-/* Estilização do título dentro dos cards de sinopse, definindo tamanho da fonte, cor e margem inferior */
-.sinopse-card h2 {
-    font-size: 20px;
-    color: #ffff;
-    margin-bottom: 15px;
-}
 
-/* Estilização do parágrafo dentro dos cards de sinopse, definindo tamanho da fonte, cor, altura da linha e fazendo o parágrafo ocupar todo o espaço disponível */
-.sinopse-card p {
-    font-size: 14px;
-    color: #cccccc;
-    line-height: 1.4;
-    flex-grow: 1; /* Faz o parágrafo ocupar todo o espaço disponível */
-}
+/* ==========================================
+      BOTÕES DOS CARDS (ESTILO E HOVERS)
+   ========================================== */
 
 /* Estilização do container do botão dentro dos cards de sinopse, utilizando flexbox para centralizar o botão e definindo largura e margem superior */
 .container-botao {
@@ -318,23 +327,21 @@ body {
 }
 
 /* Efeito de hover específico para cada botão, alterando a cor de fundo */
-.p1-btn:hover {
-    background-color: #a80fff; color: white;
+.p1-btn:hover { 
+    background-color: #a80fff; color: white; 
 }
-
-.p2-btn:hover {
-    background-color: #990000;
+.p2-btn:hover { 
+    background-color: #990000; 
 }
-
-.p3-btn:hover {
-    background-color: #00bfff;
+.p3-btn:hover { 
+    background-color: #00bfff; 
 }
-.p4-btn:hover {
-    background-color: #ffe52c;
+.p4-btn:hover { 
+    background-color: #ffe52c; 
 }
-.p5-btn:hover {
-    background-color: #d92323;
+.p5-btn:hover { 
+    background-color: #d92323; 
 }
-.p6-btn:hover {
-    background-color: #1bd13a;
+.p6-btn:hover { 
+    background-color: #1bd13a; 
 }
