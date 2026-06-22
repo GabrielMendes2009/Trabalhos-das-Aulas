@@ -1,0 +1,41 @@
+@keyframes fade {
+    0% { opacity: 0; } /* A página começa completamente transparente */
+    100% { opacity: 1; } /* A página termina completamente opaca, criando um efeito de fade-in suave */
+}
+
+body {
+    animation: fade 2.5s;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    background-color: #8DDEFC;
+    color: #88BC95;
+
+    display: flex; /* Usa Flexbox para organizar o layout da página */
+    flex-direction: column; /* Organiza os elementos em uma coluna */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    text-align: center; /* Centraliza o texto dentro dos elementos */
+}
+
+.mapa {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    border: 4px solid #88BC95;
+    border-radius: 8px;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+}
+
+img {
+    border: 4px solid #88BC95;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave para o efeito de zoom, com duração de 0.3 segundos e uma curva de aceleração suave (ease-in-out) */
+}
+
+img:hover { 
+    transform: scale(1.02); /* Aplica a transformação de escala para criar o efeito de zoom */
+}
