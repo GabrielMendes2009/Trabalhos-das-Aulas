@@ -1,0 +1,11 @@
+.menu-lateral {
+    border-right: 5px solid #1bd13a;
+}
+
+.logo-velvet {
+    color: #1bd13a;
+}
+
+.link-index {
+    color: #1bd13a !important; /* Força a logo a ficar com o seu azul */
+}
