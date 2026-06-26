@@ -1,0 +1,238 @@
+/* ESTILO GERAL E PALETA DE CORES */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #050b14; /* Azul escuro quase preto (espaço sideral) */
+    color: #f0f4f8;
+    scroll-behavior: smooth; /* Deixa o clique no menu deslizar suavemente */
+}
+
+/* Links globais */
+a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00e5ff;
+}
+
+/* CABEÇALHO */
+header {
+    background: linear-gradient(135deg, #050b14 0%, #0a192f 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.6); /* Brilho dourado no título */
+    border-bottom: 2px solid #ffd700;
+}
+
+/* NAVEGAÇÃO (MENU) */
+nav {
+    background-color: rgba(10, 25, 47, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+/* SEÇÕES EM GERAL */
+section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 40px;
+    background: rgba(10, 25, 47, 0.7);
+    border-radius: 22px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px); /* Efeito de vidro borrado no fundo */
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #ffd700;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #00e5ff;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #a0aec0;
+}
+
+/* BANNER PRINCIPAL (IMAGEM) */
+.banner {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border: 2px solid #ffd700;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
+    transition: transform 0.4s
+}
+
+.banner:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+}
+
+/* CRONOGRAMA DO EVENTO (PROGRAMA) */
+.cronograma-evento {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bloco-horario {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: rgba(5, 11, 20, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    border-right: 4px solid #00e5ff;
+    transition: transform 0.2s ease;
+}
+
+.bloco-horario:hover {
+    transform: translateX(10px);
+    background: rgba(10, 25, 47, 0.9);
+}
+
+.bloco-horario time {
+    flex-shrink: 0;
+    width: 100px; 
+}
+
+.bloco-horario h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.bloco-horario p {
+    margin: 0;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* MAPA */
+iframe {
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid rgba(0, 229, 255, 0.3) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* FORMULÁRIO DE INSCRIÇÃO */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+input, select {
+    padding: 12px;
+    background: #050b14;
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+button {
+    padding: 15px;
+    background: linear-gradient(90deg, #ffd700, #ffa500);
+    border: none;
+    border-radius: 6px;
+    color: #050b14;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 229, 255, 0.6);
+    background: linear-gradient(90deg, #00e5ff, #0077cc);
+    color: #ffffff;
+}
+
+/* BOTÃO VOLTAR AO TOPO */
+.voltar-topo {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.voltar-topo a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: rgba(5, 11, 20, 0.4);
+}
+
+.voltar-topo a:hover {
+    background: #ffd700;
+    color: #050b14;
+}
