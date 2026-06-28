@@ -345,3 +345,73 @@ body {
 .p6-btn:hover { 
     background-color: #1bd13a; 
 }
+
+/* ==========================================
+   CARROSSEL DE IMAGENS
+   ========================================== */
+
+.container-carrossel {
+    position: relative; /* Necessário para posicionar os botões de navegação */
+    max-width: 800px; /* Limita a largura máxima do carrossel */
+    height: 450px; /* Define uma altura fixa para o carrossel */
+    margin: 0 auto; /* Centraliza o carrossel horizontalmente */
+    overflow: hidden; /* Esconde as imagens que estão fora da área visível do carrossel */
+    border-radius: 15px; /* Adiciona cantos arredondados ao carrossel */
+    border: 4px solid #3a43e4; /* Adiciona uma borda ao redor do carrossel */
+    background-color: #000; /* Define a cor de fundo do carrossel */
+}
+
+.slides-carrosel {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute; /* Coloca um slide exatamente em cima do outro */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Começa totalmente invisível */
+    visibility: hidden;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out; /* A mágica da suavidade aqui! */
+}
+
+.slide.ativo {
+    opacity: 1; /* Fica visível suavemente */
+    visibility: visible;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Garante que a imagem preencha o espaço do carrossel sem distorcer */
+    background-color: #000; /* Define a cor de fundo para as imagens do carrossel */
+}
+
+.btn-carrossel {
+    position: absolute; /* Posiciona os botões de navegação em relação ao container do carrossel */
+    top: 50%; /* Centraliza verticalmente os botões */
+    transform: translateY(-50%); /* Ajusta a posição vertical dos botões */
+    background-color: rgba(0, 0, 0, 0.5); /* Define uma cor de fundo semi-transparente para os botões */
+    color: #fff; /* Define a cor do texto dos botões */
+    border: none; /* Remove a borda padrão dos botões */
+    font-size: 24px; /* Define o tamanho da fonte dos botões */
+    padding: 15px 20px; /* Define o espaçamento interno dos botões */
+    cursor: pointer; /* Altera o cursor para indicar que os botões são clicáveis */
+    border-radius: 5px; /* Adiciona cantos arredondados aos botões */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor de fundo dos botões */
+    z-index: 10; /* Garante que os botões fiquem acima das imagens do carrossel */
+}
+
+.btn-carrossel:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Aumenta a opacidade do fundo dos botões no hover */
+}
+
+.anterior {
+    left: 10px; /* Posiciona o botão "Anterior" à esquerda do carrossel */
+}
+
+.proximo {
+    right: 10px; /* Posiciona o botão "Próximo" à direita do carrossel */
+}

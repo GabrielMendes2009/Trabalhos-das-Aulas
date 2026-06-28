@@ -281,10 +281,67 @@
                     </div>
                 </section>
 
+                <hr class="separador">
+
+                <section style="margin-bottom: 50px;">
+                    <h2>Screenshots do Jogo</h2>
+                    
+                    <div class="container-carrossel">
+                        <button class="btn-carrossel anterior" onclick="mudarSlide(-1)">&#10094;</button>
+                        
+                        <div class="slides-carrossel">
+                            <div class="slide ativo">
+                                <img src="../persona1/img/print1.jpg" alt="Gameplay Persona 1 - 1">
+                            </div>
+                            <div class="slide">
+                                <img src="../persona1/img/print2.jpeg" alt="Gameplay Persona 1 - 2">
+                            </div>
+                            <div class="slide">
+                                <img src="../persona1/img/print3.jpg" alt="Gameplay Persona 1 - 3">
+                            </div>
+                            <div class="slide">
+                                <img src="../persona1/img/print4.jpg" alt="Gameplay Persona 1 - 4">
+                            </div>
+                            <div class="slide">
+                                <img src="../persona1/img/print5.png" alt="Gameplay Persona 1 - 5">
+                            </div>
+                        </div>
+                        
+                        <button class="btn-carrossel proximo" onclick="mudarSlide(1)">&#10095;</button>
+                    </div>
+                </section>
+
             </div>
 
         </main>
 
     </div>
+
+    <script>
+        let slideIndex = 0;
+
+        function mudarSlide(direcao) {
+            const slides = document.querySelectorAll('.slide');
+            
+            // Remove a classe ativo do slide atual
+            slides[slideIndex].classList.remove('ativo');
+            
+            // Calcula o próximo índice
+            slideIndex += direcao;
+            
+            // Se passar do último, volta pro primeiro
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            // Se for menor que zero, vai pro último
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            
+            // Adiciona a classe ativo no novo slide
+            slides[slideIndex].classList.add('ativo');
+        }
+    </script>
+
 </body>
 </html>

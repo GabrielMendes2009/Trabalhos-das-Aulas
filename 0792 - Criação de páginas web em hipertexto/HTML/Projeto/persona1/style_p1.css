@@ -84,3 +84,16 @@ h2 {
     color: #cccccc;
     font-family: "Arial", sans-serif;
 }
+
+/* Garante que as imagens dentro dos perfis dos personagens fiquem centralizadas e cortadas perfeitamente */
+.capa-jogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz com que a imagem preencha o container sem distorcer o rosto dos personagens */
+    object-position: center; /* Foca a imagem no topo/centro, ideal para artes de personagens */
+    display: block;
+}
+
+.container-carrossel {
+    border: 4px solid #a80fff; /* Adiciona uma borda ao redor do carrossel */
+}
