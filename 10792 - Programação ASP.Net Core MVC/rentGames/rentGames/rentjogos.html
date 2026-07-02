@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>Rent - Jogos</title>
+    <style>
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+            /* A página começa completamente transparente */
+            100% {
+                opacity: 1;
+            }
+            /* A página termina completamente opaca, criando um efeito de fade-in suave */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #1a1a1a;
+            color: #ffff;
+            animation: fade 1.5s;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 8px;
+            margin-bottom: 5px;
+            border-radius: 15px;
+            background-color: gray;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            border-radius: 5px;
+        }
+
+        button {
+            border-radius: 5px;
+        }
+
+        button:hover {
+            transform: scale(1.02); /* Aumenta a imagem no hover para criar um efeito de zoom */
+            transition: transform 0.5s ease;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Locadora de Jogos</h1>
+
+    <div class="section">
+        <h2>Jogos Disponíveis</h2>
+        <button onclick="listarJogos()">Atualizar Lista</button>
+        <ul id="listaJogos">
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Cadastrar Novo Jogo</h2>
+        <input type="text" id="nomeJogo" placeholder="Nome do Jogo" /><br><br>
+        <input type="text" id="consoleJogo" placeholder="Console (Ex: Xbox Series X)" /><br><br>
+        <button onclick="cadastrarJogo()">Enviar Jogo</button>
+    </div>
+
+    <script>
+        const URL_API = "https://localhost:7060/api/rentGames";
+
+        // Função para buscar os jogos usando o GET
+        function listarJogos() {
+            fetch(URL_API)
+                .then(response => {
+                    if (!response.ok) throw new Error("Erro ao conectar na API!");
+                    return response.json();
+                })
+                .then(jogos => {
+                    const lista = document.getElementById("listaJogos");
+                    lista.innerHTML = ""; // Limpa a tela antes de carregar
+
+                    jogos.forEach(jogo => {
+                        const item = document.createElement("li");
+
+                        item.textContent = `[${jogo.consola}] ${jogo.nome} - ${jogo.alugado ? 'Alugado' : 'Disponível'}`;
+
+                        lista.appendChild(item);
+                    });
+                })
+                .catch(erro => console.error("Erro ao buscar jogos: ", erro));
+        }
+
+        // Função para enviar um novo jogo usando o POST
+        function cadastrarJogo() {
+            const nome = document.getElementById("nomeJogo").value;
+            const consolaObj = document.getElementById("consoleJogo").value;
+
+            if (!nome || !consolaObj) {
+                alert("Preencha todos os campos.");
+                return;
+            }
+
+            const novoJogo = {
+                nome: nome,
+                consola: consolaObj,
+                alugado: false
+            };
+
+            fetch(URL_API, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(novoJogo)
+            })
+                .then(response => {
+                    if (!response.ok) throw new Error("Erro ao cadastrar!");
+                    return response.json();
+                })
+                .then(dados => {
+                    // Vai exibir o "Jogo Adicionadooooo!!!" que você colocou no C#
+                    alert("Sucesso: " + dados.mensagem);
+
+                    // Limpa os campos de texto
+                    document.getElementById("nomeJogo").value = "";
+                    document.getElementById("consoleJogo").value = "";
+
+                    // Atualiza a lista automaticamente na tela
+                    listarJogos();
+                })
+                .catch(erro => console.error("Erro ao cadastrar o jogo: ", erro));
+        }
+
+        // window.onload = listarJogos;
+
+    </script>
+
+</body>
+</html>

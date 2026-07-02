@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PAF2024#\\source\\repos\\rentGames\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9CD882CC-B87D-48C3-A542-3350158C8413}|rentGames\\rentGames.csproj|c:\\users\\paf2024#\\source\\repos\\rentgames\\rentgames\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CD882CC-B87D-48C3-A542-3350158C8413}|rentGames\\rentGames.csproj|solutionrelative:rentgames\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CD882CC-B87D-48C3-A542-3350158C8413}|rentGames\\rentGames.csproj|c:\\users\\paf2024#\\source\\repos\\rentgames\\rentgames\\rentjogos.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9CD882CC-B87D-48C3-A542-3350158C8413}|rentGames\\rentGames.csproj|solutionrelative:rentgames\\rentjogos.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CD882CC-B87D-48C3-A542-3350158C8413}|rentGames\\rentGames.csproj|c:\\users\\paf2024#\\source\\repos\\rentgames\\rentgames\\models\\jogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CD882CC-B87D-48C3-A542-3350158C8413}|rentGames\\rentGames.csproj|solutionrelative:rentgames\\models\\jogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CD882CC-B87D-48C3-A542-3350158C8413}|rentGames\\rentGames.csproj|c:\\users\\paf2024#\\source\\repos\\rentgames\\rentgames\\controllers\\rentgames.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CD882CC-B87D-48C3-A542-3350158C8413}|rentGames\\rentGames.csproj|solutionrelative:rentgames\\controllers\\rentgames.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\PAF2024#\\source\\repos\\rentGames\\rentGames\\Program.cs",
+              "RelativeDocumentMoniker": "rentGames\\Program.cs",
+              "ToolTip": "C:\\Users\\PAF2024#\\source\\repos\\rentGames\\rentGames\\Program.cs",
+              "RelativeToolTip": "rentGames\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-02T11:41:16.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "rentjogos.html",
+              "DocumentMoniker": "C:\\Users\\PAF2024#\\source\\repos\\rentGames\\rentGames\\rentjogos.html",
+              "RelativeDocumentMoniker": "rentGames\\rentjogos.html",
+              "ToolTip": "C:\\Users\\PAF2024#\\source\\repos\\rentGames\\rentGames\\rentjogos.html",
+              "RelativeToolTip": "rentGames\\rentjogos.html",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAE0AAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-07-02T12:23:16.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "jogo.cs",
+              "DocumentMoniker": "C:\\Users\\PAF2024#\\source\\repos\\rentGames\\rentGames\\Models\\jogo.cs",
+              "RelativeDocumentMoniker": "rentGames\\Models\\jogo.cs",
+              "ToolTip": "C:\\Users\\PAF2024#\\source\\repos\\rentGames\\rentGames\\Models\\jogo.cs",
+              "RelativeToolTip": "rentGames\\Models\\jogo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-02T11:53:44.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "rentGames.cs",
+              "DocumentMoniker": "C:\\Users\\PAF2024#\\source\\repos\\rentGames\\rentGames\\Controllers\\rentGames.cs",
+              "RelativeDocumentMoniker": "rentGames\\Controllers\\rentGames.cs",
+              "ToolTip": "C:\\Users\\PAF2024#\\source\\repos\\rentGames\\rentGames\\Controllers\\rentGames.cs",
+              "RelativeToolTip": "rentGames\\Controllers\\rentGames.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-02T11:29:58.868Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

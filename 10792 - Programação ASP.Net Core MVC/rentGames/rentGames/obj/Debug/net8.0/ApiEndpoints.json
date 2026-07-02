@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "rentGames.Controllers.rentGames",
+    "Method": "GetJogos",
+    "RelativePath": "api/rentGames",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "rentGames.Controllers.rentGames",
+    "Method": "CriarJogo",
+    "RelativePath": "api/rentGames",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novoJogo",
+        "Type": "rentGames.Models.Jogo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
