@@ -86,3 +86,6 @@ h2 {
 .container-carrossel {
     border: 4px solid #d92323; /* Adiciona uma borda ao redor do carrossel */
 }
+
+#btn-topo { background-color: #d92323; }
+#btn-topo:hover { background-color: #c01b1b; }

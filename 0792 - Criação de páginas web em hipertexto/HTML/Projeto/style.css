@@ -22,6 +22,7 @@ body {
     color: #ffff;
     min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura total da janela de visualização */
     animation: fade 1.5s; /* Aplica a animação de fade-in à página */
+    font-weight: normal;
 }
 
 /* Estilização do container principal, utilizando flexbox para organizar os elementos */
@@ -414,4 +415,46 @@ body {
 
 .proximo {
     right: 10px; /* Posiciona o botão "Próximo" à direita do carrossel */
+}
+
+/* ==========================================
+   BOTÃO VOLTAR AO TOPO (BASE GERAL)
+   ========================================== */
+
+#btn-topo {
+    position: fixed; /* Fixa o botão no canto inferior direito da tela */
+    bottom: 30px; /* Distância do botão em relação à parte inferior da tela */
+    right: 30px; /* Distância do botão em relação à parte direita da tela */
+    z-index: 99; /* Garante que o botão fique acima de outros elementos da página */
+    border: none; /* Remove a borda padrão do botão */
+    outline: none; /* Remove o contorno padrão do botão */
+    color: white; /* Define a cor do texto do botão */
+    cursor: pointer; /* Altera o cursor para indicar que o botão é clicável */
+    padding: 15px; /* Define o espaçamento interno do botão */
+    border-radius: 50%; /* Deixa redondo */
+    width: 50px; /* Define a largura do botão */
+    height: 50px; /* Define a altura do botão */
+    font-size: 20px; /* Define o tamanho da fonte do botão */
+    font-weight: bold; /* Define a espessura da fonte do botão */
+    transform: rotate(90deg); /* Gira a seta para apontar para cima */
+    display: flex; /* Utiliza flexbox para centralizar o conteúdo do botão */
+    align-items: center; /* Centraliza verticalmente o conteúdo do botão */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo do botão */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao botão para dar profundidade */
+    background-color: #3a43e4; /* Define a cor de fundo do botão */
+    
+    /* Efeito de transição suave para sumir/aparecer */
+    opacity: 0; /* Começa invisível */
+    visibility: hidden; /* Garante que o botão não seja clicável quando invisível */
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.3s ease; /* Transição suave para opacidade, visibilidade e transformação */
+}
+
+#btn-topo:hover {
+    background-color: #2a33c4; /* Muda a cor de fundo no hover */
+    transform: rotate(90deg) scale(1.1); /* Aumenta um pouco o tamanho do botão no hover */
+}
+
+#btn-topo.visivel {
+    opacity: 1; /* Torna o botão visível */
+    visibility: visible; /* Garante que o botão seja clicável quando visível */
 }

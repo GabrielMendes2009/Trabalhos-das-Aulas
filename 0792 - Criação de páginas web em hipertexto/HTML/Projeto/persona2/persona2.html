@@ -361,6 +361,33 @@
             slides[slideIndex].classList.add('ativo');
         }
     </script>
+
+    <button id="btn-topo" onclick="voltarAoTopo()" title="Voltar ao Topo">&#10094;</button>
+
+    <script>
+
+        // Pega o elemento do botão
+        const botaoTopo = document.getElementById("btn-topo");
+
+        // Escuta o evento de rolagem (scroll) da página
+        window.onscroll = function() {
+            // Se descer mais de 400 pixels do topo, adiciona a classe que mostra o botão
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                botaoTopo.classList.add("visivel");
+            } else {
+                botaoTopo.classList.remove("visivel");
+            }
+        };
+
+        // Função executada ao clicar no botão
+        function voltarAoTopo() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth" /* Rolagem suave de volta para o início */
+            });
+        }
+
+    </script>
     
 </body>
 </html>

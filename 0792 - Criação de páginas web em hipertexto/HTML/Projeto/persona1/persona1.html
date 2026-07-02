@@ -316,6 +316,9 @@
                             <div class="slide">
                                 <img src="../persona1/img/print5.png" alt="Gameplay Persona 1 - 5">
                             </div>
+                            <div>
+                                <iframe src="https://www.youtube.com/embed/6l14KsdVqbU?si=0jyIkQSJoz9aT_CI" title="YouTube video player"></iframe>
+                            </div>
                         </div>
                         
                         <button class="btn-carrossel proximo" onclick="mudarSlide(1)">&#10095;</button>
@@ -352,6 +355,33 @@
             // Adiciona a classe ativo no novo slide
             slides[slideIndex].classList.add('ativo');
         }
+    </script>
+
+    <button id="btn-topo" onclick="voltarAoTopo()" title="Voltar ao Topo">&#10094;</button>
+
+    <script>
+
+        // Pega o elemento do botão
+        const botaoTopo = document.getElementById("btn-topo");
+
+        // Escuta o evento de rolagem (scroll) da página
+        window.onscroll = function() {
+            // Se descer mais de 400 pixels do topo, adiciona a classe que mostra o botão
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                botaoTopo.classList.add("visivel");
+            } else {
+                botaoTopo.classList.remove("visivel");
+            }
+        };
+
+        // Função executada ao clicar no botão
+        function voltarAoTopo() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth" /* Rolagem suave de volta para o início */
+            });
+        }
+
     </script>
 
 </body>
