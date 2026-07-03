@@ -333,14 +333,14 @@ h2 {
     padding: 10px 25px; /* Define o espaçamento interno do botão, com 10px de altura e 25px de largura para criar um botão mais largo e fácil de clicar */
     font-size: 14px;
     text-align: center;
-    transform: skewX(-10deg); /* Efeito recortado/inclinado */
+    transform: skewX(-5deg); /* Efeito recortado/inclinado */
     transition: all 0.2s ease;
     border-radius: 5px; /* Adiciona cantos arredondados ao botão */
 }
 
 /* Efeito de hover no botão recortado, aplicando transformação para aumentar o tamanho e mudar a cor de fundo */
 .btn-recortado:hover {
-    transform: skewX(-10deg) scale(1.05); /* Aumenta um pouco no hover */
+    transform: skewX(-5deg) scale(1.05); /* Aumenta um pouco no hover */
     background-color: #000000; /* Muda a cor de fundo no hover */
 }
 
