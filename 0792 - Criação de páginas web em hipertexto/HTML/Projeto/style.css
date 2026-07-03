@@ -13,7 +13,7 @@
     margin: 0;
     padding: 0; /* Remove margens e paddings padrão */
     box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos na largura e altura dos elementos */
-    font-family: "Arial Black", Impact, sans-serif;
+    font-family: "Arial", Impact, sans-serif;
 }
 
 /* Estilização do corpo da página, definindo cor de fundo, cor do texto e altura mínima */
@@ -23,6 +23,14 @@ body {
     min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura total da janela de visualização */
     animation: fade 1.5s; /* Aplica a animação de fade-in à página */
     font-weight: normal;
+}
+
+h1 {
+    font-family: "Arial Black", Impact, sans-serif;
+}
+
+h2 {
+    font-family: "Arial Black", Impact, sans-serif;
 }
 
 /* Estilização do container principal, utilizando flexbox para organizar os elementos */
@@ -45,7 +53,9 @@ body {
     flex-direction: column;
     gap: 30px; /* Adiciona espaçamento entre os elementos do menu lateral */
     border-right: 5px solid #3a43e4;
-    height: auto;
+    position: sticky;   /* Ele vai fixar na posição inicial pra toda vida */
+    top: 0;
+    height: 100vh;     /* Ocupa a altura inteira da tela */
 }
 
 /* Estilização da logo, definindo tamanho da fonte, cor, alinhamento e espaçamento entre letras */
@@ -54,6 +64,7 @@ body {
     color: #3a43e4;
     text-align: center;
     letter-spacing: 2px;
+    font-family: "Arial Black", Impact, sans-serif;
 }
 
 /* Estilização do link da logo, removendo sublinhado, definindo cor e largura, além de aplicar transição para efeitos de transformação */
@@ -63,11 +74,13 @@ body {
     display: block; /* Garante que o link ocupe toda a largura disponível */
     width: 100%;
     transition: transform 0.2s ease;
+    font-family: "Arial Black", Impact, sans-serif;
 }
 
 .link-index:hover {
     transform: scale(1.05); /* Aumenta um pouco a logo no hover para criar um efeito de destaque */
     color: #3a43e4;
+    font-family: "Arial Black", Impact, sans-serif;
 }
 
 /* Estilização da lista de links no menu lateral, removendo marcadores e definindo layout flexível em coluna */
@@ -76,6 +89,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px; /* Adiciona espaçamento entre os itens da lista */
+    font-family: "Arial Black", Impact, sans-serif;
 }
 
 /* Estilização dos links no menu lateral, definindo cor, padding, fundo, tamanho da fonte e efeitos de transição e transformação */
@@ -89,6 +103,7 @@ body {
     transition: all 0.3 ease;
     border-radius: 5px;
     transform: skewX(-10deg); /* Aplica um efeito de inclinação para criar um visual mais dinâmico e moderno */
+    font-family: "Arial Black", Impact, sans-serif;
 }
 
 /* Efeito de hover nos links do menu lateral, aplicando transformação e mudança de cor */
@@ -96,6 +111,7 @@ body {
     transform: skewX(-10deg) scale(1.05); /* Aumenta um pouco o link no hover para criar um efeito de destaque */
     color: #000000;
     border-radius: 5px;
+    font-family: "Arial Black", Impact, sans-serif;
 }
 
 /* Estilização do link ativo no menu lateral, aplicando transformação, desabilitando eventos de clique e garantindo que o texto fique branco */
@@ -104,6 +120,7 @@ body {
     transform: skewX(-10deg) scale(1.05); /* Aplica a mesma transformação do hover para destacar o link ativo */
     pointer-events: none; /* Impede o usuário de clicar na página que já está aberta */
     color: #ffffff !important; /* Garante que o texto fique branco */
+    font-family: "Arial Black", Impact, sans-serif;
 }
 
 
