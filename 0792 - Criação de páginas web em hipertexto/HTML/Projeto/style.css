@@ -407,6 +407,13 @@ h2 {
     background-color: #000; /* Define a cor de fundo para as imagens do carrossel */
 }
 
+.slide iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
 .btn-carrossel {
     position: absolute; /* Posiciona os botões de navegação em relação ao container do carrossel */
     top: 50%; /* Centraliza verticalmente os botões */
