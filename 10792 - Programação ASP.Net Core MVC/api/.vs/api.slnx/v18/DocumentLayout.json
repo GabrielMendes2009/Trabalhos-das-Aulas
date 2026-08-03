@@ -1,0 +1,140 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Windows\\Aulas\\API\\api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|e:\\windows\\aulas\\api\\api\\api\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|e:\\windows\\aulas\\api\\api\\api\\services\\imposterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\services\\imposterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|e:\\windows\\aulas\\api\\api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|e:\\windows\\aulas\\api\\api\\api\\models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|e:\\windows\\aulas\\api\\api\\api\\controllers\\studioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\studioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|e:\\windows\\aulas\\api\\api\\api\\controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|e:\\windows\\aulas\\api\\api\\api\\controllers\\externalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\externalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "E:\\Windows\\Aulas\\API\\api\\api\\README.md",
+              "RelativeDocumentMoniker": "api\\README.md",
+              "ToolTip": "E:\\Windows\\Aulas\\API\\api\\api\\README.md",
+              "RelativeToolTip": "api\\README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-07-31T08:49:49.603Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Windows\\Aulas\\API\\api\\api\\Program.cs",
+              "RelativeDocumentMoniker": "api\\Program.cs",
+              "ToolTip": "E:\\Windows\\Aulas\\API\\api\\api\\Program.cs",
+              "RelativeToolTip": "api\\Program.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAG4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T12:51:56.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ImposterService.cs",
+              "DocumentMoniker": "E:\\Windows\\Aulas\\API\\api\\api\\Services\\ImposterService.cs",
+              "RelativeDocumentMoniker": "api\\Services\\ImposterService.cs",
+              "ToolTip": "E:\\Windows\\Aulas\\API\\api\\api\\Services\\ImposterService.cs",
+              "RelativeToolTip": "api\\Services\\ImposterService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAUAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T12:50:28.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Game.cs",
+              "DocumentMoniker": "E:\\Windows\\Aulas\\API\\api\\api\\Models\\Game.cs",
+              "RelativeDocumentMoniker": "api\\Models\\Game.cs",
+              "ToolTip": "E:\\Windows\\Aulas\\API\\api\\api\\Models\\Game.cs",
+              "RelativeToolTip": "api\\Models\\Game.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T12:32:44.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StudiosController.cs",
+              "DocumentMoniker": "E:\\Windows\\Aulas\\API\\api\\api\\Controllers\\StudiosController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\StudiosController.cs",
+              "ToolTip": "E:\\Windows\\Aulas\\API\\api\\api\\Controllers\\StudiosController.cs",
+              "RelativeToolTip": "api\\Controllers\\StudiosController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T12:23:44.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GamesController.cs",
+              "DocumentMoniker": "E:\\Windows\\Aulas\\API\\api\\api\\Controllers\\GamesController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\GamesController.cs",
+              "ToolTip": "E:\\Windows\\Aulas\\API\\api\\api\\Controllers\\GamesController.cs",
+              "RelativeToolTip": "api\\Controllers\\GamesController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowDQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T12:23:02.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ExternalController.cs",
+              "DocumentMoniker": "E:\\Windows\\Aulas\\API\\api\\api\\Controllers\\ExternalController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\ExternalController.cs",
+              "ToolTip": "E:\\Windows\\Aulas\\API\\api\\api\\Controllers\\ExternalController.cs",
+              "RelativeToolTip": "api\\Controllers\\ExternalController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCEAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T12:21:56.206Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
