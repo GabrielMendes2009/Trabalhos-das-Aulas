@@ -2,10 +2,10 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: #f4f4f4;
-    color: #222;
+    color: 	#d92323;
 }
 
-nav { background-color: #222; padding: 20px; text-align: center; }
+nav { background-color: 	#d92323; padding: 20px; text-align: center; }
 
 nav a { color: white; text-decoration: none; margin-right: 20px; }
 
@@ -16,6 +16,7 @@ h1 {
 }
 
 p {
+    color: black;
     max-width: 900px;
     margin: 30px auto;
     background: white;
