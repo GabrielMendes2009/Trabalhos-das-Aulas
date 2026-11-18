@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
 
@@ -7,18 +8,25 @@
 
         <link rel="stylesheet" href="{{ url_for("static", filename="style.css")}}">
     </head>
+
     <body>
         {% block risadamalefica %}
         <h1> MUAHAHAHAHAHAHEOW </h1>
         {% endblock %}
 
+       
         <nav>
-            <a href="{{ url_for('index') }}"> Home Page </a> |
-            <a href="{{ url_for('pag2') }}"> Pagina2 </a>
+            <a href="{{ url_for("index") }}"> Home Page</a> |
+            <a href="{{ url_for("pag2") }}"> Pagina 2</a> |
+            <a href="{{ url_for("pag3") }}"> Lista </a> |
+            <a href="{{ url_for("pag4", id_pag4=41 ) }}"> path param </a> |
+            <a href="{{ url_for("pag5", nome="João", idade=12 ) }}"> query Param </a> |
+            <a href="{{ url_for("listar_clientes") }}"> Clientes </a> |</a>
         </nav>
 
         <hr>
 
         {% block content %}{% endblock %}
     </body>
+
 </html>

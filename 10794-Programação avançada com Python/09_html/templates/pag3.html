@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+        {% block titulo %} Lista de dados {% endblock %}
+
+        {% block header %} <h1> Lista de dados </h1> {% endblock %}
+
+    {% block content %}
+    <main>
+        <ol>
+        {% for nome in nomes%}
+            <li> <a href="{{ url_for( "pag5", nome = nome )}}"{{nome}} </li>
+        {% endfor%}
+
+        
+        </ol>
+    </main>
+    {% endblock %}

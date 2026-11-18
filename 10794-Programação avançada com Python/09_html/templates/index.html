@@ -3,16 +3,14 @@
 {% block titulo %} Home Page {% endblock %}
 
 {% block content %}
-    <h1>A minha 1ª pagina Flask</h1> <!-- colocar o h1 antes da nav-->
+<h1>A minha 1ª pagina Flask</h1> <!-- colocar o h1 antes da nav-->
     
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Ab aliquid assumenda at cumque doloribus ullam, 
-        natus neque nesciunt optio quas quidem quisquam.
-        <br>
-        <br>
-        <img src="{{ url_for("static", filename="img/b358b49a00fabf6c7bc5e9ba0006b922.jpg")}}" alt="futaba">
-    </p>
+<p>
+    {{ conteudo }}
+    <br>
+    <br>
+    <img src="{{ url_for("static", filename="img/b358b49a00fabf6c7bc5e9ba0006b922.jpg")}}" alt="futaba">
+</p>
 
     
 {% endblock %}
